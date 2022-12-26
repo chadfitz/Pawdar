@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
-// import { ReactDOM } from "react";
 import ReactDOM from "react-dom";
 import './Modal.css';
 

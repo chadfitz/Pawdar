@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../session";
+import { BsPersonFill } from "react-icons/bs";
 
 const ProfileButton = ({ user }) => {
   const dispatch = useDispatch();
@@ -31,9 +32,9 @@ const ProfileButton = ({ user }) => {
   return (
     <>
       <button onClick={openMenu}>
-        <div style={{ color: "purple", fontSize: "500px" }}>
-          <i className="fa-solid fa-mustache"></i>
-        </div>
+        {/* <div style={{ color: "purple", fontSize: "500px" }}> */}
+          <BsPersonFill />
+        {/* </div> */}
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
