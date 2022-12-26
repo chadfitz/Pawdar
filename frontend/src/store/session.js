@@ -1,4 +1,3 @@
-// import csrfFetch, { storeCSRFToken } from "./csrf"
 import csrfFetch from "./csrf";
 
 export const CREATE_SESSION = 'session/CREATE_SESSION'

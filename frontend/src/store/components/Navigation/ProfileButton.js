@@ -32,9 +32,9 @@ const ProfileButton = ({ user }) => {
   return (
     <>
       <button onClick={openMenu}>
-        {/* <div style={{ color: "purple", fontSize: "500px" }}> */}
+        <div style={{ color: "purple" }}>
           <BsPersonFill />
-        {/* </div> */}
+        </div>
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
