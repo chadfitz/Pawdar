@@ -21,4 +21,10 @@
 #modal-content {
   position: absolute;
   background-color:white;
+  width: 500px;
+  height: 500px;
+  padding: 50px 80px 40px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }

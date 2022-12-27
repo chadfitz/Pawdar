@@ -1,1 +1,14 @@
 /* TODO Add site wide styles */
+@import url('https://fonts.googleapis.com/css2?family=**Montserrat:wght@500**&display=swap');
+
+:root{
+  --primary-color: #6504b5;
+  --text-color: #4d4751;
+  --border-color: #d2d1d3;
+  --primary-font: 'Montserrat', sans-serif;
+}
+body{
+  color: var(--text-color);
+  font-family: var(--primary-font);  
+  -webkit-font-smoothing: antialiased;
+}

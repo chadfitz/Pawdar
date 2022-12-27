@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../session";
-import { BsPersonFill } from "react-icons/bs";
+import { IoMdPerson } from "react-icons/io";
 
 const ProfileButton = ({ user }) => {
   const dispatch = useDispatch();
@@ -32,8 +32,8 @@ const ProfileButton = ({ user }) => {
   return (
     <>
       <button onClick={openMenu}>
-        <div style={{ color: "purple" }}>
-          <BsPersonFill />
+        <div>
+          <IoMdPerson size={30}/>
         </div>
       </button>
       {showMenu && (
