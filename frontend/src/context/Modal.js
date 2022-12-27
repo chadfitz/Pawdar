@@ -8,7 +8,7 @@ export const ModalProvider = ({ children }) => {
   const modalRef = useRef();
   const [value, setValue] = useState();
 
-  useEffect(()=>{
+  useEffect(() => {
     setValue(modalRef.current);
   }, [])
 
@@ -22,7 +22,7 @@ export const ModalProvider = ({ children }) => {
   );
 }
 
-export const Modal = (onClose, {children}) => {
+export const Modal = ({ onClose, children }) => {
   const modalNode = useContext(ModalContext);
   if (!modalNode) return null;
 
@@ -35,4 +35,4 @@ export const Modal = (onClose, {children}) => {
     </div>,
     modalNode
   );
-} 
+}
