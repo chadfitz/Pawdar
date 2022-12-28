@@ -27,6 +27,26 @@ const LoginForm = () => {
       });
   };
 
+  // const demoSubmit = e => {
+  //   e.preventDefault();
+  //   setErrors([]);
+  //   setCredential('Demo-lition');
+  //   setPassword('password');
+  //   return dispatch(sessionActions.login({ credential, password }))
+  //   .catch(async (res) => {
+  //     let data;
+  //     try {
+  //       // .clone() essentially allows you to read the response body twice
+  //       data = await res.clone().json();
+  //     } catch {
+  //       data = await res.text(); // Will hit this case if the server is down
+  //     }
+  //     if (data?.errors) setErrors(data.errors);
+  //     else if (data) setErrors([data]);
+  //     else setErrors([res.statusText]);
+  //   });
+  // }
+
   return (
     <div className="inner-login-modal-content-container">
       <div className="upper-content">
@@ -62,6 +82,9 @@ const LoginForm = () => {
       <div className="lower-content">
         {/* -- Insert Demo User Link Here -- */}
         {/* <div onClick={dispatch(sessionActions.login({credential:'Demo-lition', password:'password'}))}>Log In</div> */}
+        {/* <form onSubmit={demoSubmit}>
+          <button>Demo Log In</button>
+        </form> */}
       </div>
     </div>
   );

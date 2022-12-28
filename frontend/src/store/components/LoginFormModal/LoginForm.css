@@ -53,9 +53,11 @@ form button{
 }
 
 form button:hover{
+  cursor: pointer;
   border-color: #2e0152;
   background-color: #2e0152;
   color: #fff;
+  transition: .3s;
 }
 
 .divider{
