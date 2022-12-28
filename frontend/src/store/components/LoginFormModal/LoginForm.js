@@ -60,7 +60,8 @@ const LoginForm = () => {
         or log in with Demo User
       </div>
       <div className="lower-content">
-        Insert Demo User Link Here
+        {/* -- Insert Demo User Link Here -- */}
+        {/* <div onClick={dispatch(sessionActions.login({credential:'Demo-lition', password:'password'}))}>Log In</div> */}
       </div>
     </div>
   );

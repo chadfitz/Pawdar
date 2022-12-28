@@ -71,7 +71,7 @@ form button:hover{
   display: block;
   width: 340px;
   position: absolute;
-  bottom: 36%;
-  border-top: 1px solid var(--border-color);
+  bottom: 33%;
+  border-top: 2px solid var(--border-color);
   overflow: hidden;
 }

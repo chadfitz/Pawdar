@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
+import SignupFormModal from '../SignupFormModal';
+import ProfileButton from './ProfileButton';
 import { GiDogHouse } from 'react-icons/gi';
 import { FaHeart } from 'react-icons/fa';
 import './Navigation.css';
@@ -21,8 +22,13 @@ const Navigation = () => {
   } else {
     sessionLinks = (
       <>
+      <div className='login-button'>
         <LoginFormModal />
-        <NavLink to="/signup">Sign Up</NavLink>
+      </div>
+      <div className='signup-button'>
+        <SignupFormModal />
+      </div>
+        {/* <NavLink to="/signup">Sign Up</NavLink> */}
       </>
     );
   }

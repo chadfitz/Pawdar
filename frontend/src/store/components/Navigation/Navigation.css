@@ -27,6 +27,15 @@ nav{
   color: #4d4751;
 }
 
+button{
+  color: var(--font-color);
+  font-family: var(--primary-font);
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 17px;
+}
+
 .nav-left{
   display: flex;
   justify-content: center;
@@ -49,23 +58,7 @@ nav{
   align-items: center;
 }
 
-.nav-right div:hover{
-  cursor: pointer;
-  color: var(--primary-color);
-  transition: 0.3s;
-}
-
-button{
-  color: var(--font-color);
-  font-family: var(--primary-font);
-  -webkit-font-smoothing: antialiased;
-  font-weight: bold;
-  letter-spacing: 1px;
-  font-size: 17px;
-  /* line-height: 1.6; */
-}
-
-button:hover{
+.nav-favorite:hover{
   cursor: pointer;
   color: var(--primary-color);
   transition: 0.3s;
@@ -79,7 +72,6 @@ button:hover{
 /* when signed in */
 .session-links{
   display: flex;
-  padding-left: 30px;
   align-items: center;
 }
 
@@ -90,10 +82,21 @@ button:hover{
 /* when signed out */
 .nav-user{
   display: flex;
-  padding-left: 30px;
   align-items: center;
 }
 
-.nav-user a{
+.nav-user button{
   padding-left: 30px;
+}
+
+.login-button button:hover{
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+
+.signup-button button:hover{
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: 0.3s;
 }
