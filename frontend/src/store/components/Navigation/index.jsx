@@ -14,21 +14,20 @@ const Navigation = () => {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <div className='session-links'>
+      <div className='user-info'>
           <ProfileButton user={sessionUser} />
-          <p>{sessionUser.username.toUpperCase()}</p>
+          {/* <p>{sessionUser.username.toUpperCase()}</p> */}
       </div>
     );
   } else {
     sessionLinks = (
       <>
-      <div className='login-button'>
-        <LoginFormModal />
-      </div>
-      <div className='signup-button'>
-        <SignupFormModal />
-      </div>
-        {/* <NavLink to="/signup">Sign Up</NavLink> */}
+        <div className='login-button'>
+          <LoginFormModal />
+        </div>
+        <div className='signup-button'>
+          <SignupFormModal />
+        </div>
       </>
     );
   }
@@ -44,7 +43,7 @@ const Navigation = () => {
     <nav className='nav-bar'>
       <div className='region--inner'>
         <div className='nav-left'>
-          <div>
+          <div className='home-logo'>
             <NavLink exact to="/">
               <GiDogHouse size={40} />
             </NavLink>

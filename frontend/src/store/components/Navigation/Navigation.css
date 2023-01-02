@@ -7,14 +7,13 @@ nav{
   box-sizing: border-box;
   height: var(--height);
   display: flex;
-  /* justify-content: space-between; */
   justify-content: center;
   align-items: center;
   border: 2px solid red;
-  /* line-height: 1.6; */
   font-weight: bold;
   letter-spacing: 1.3px;
   font-size: 17px;
+  overflow: visible;
 }
 
 .region--inner{
@@ -52,6 +51,11 @@ button{
   transition: 0.3s;
 }
 
+.home-logo:hover{
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
 .nav-right{
   display: flex;
   justify-content: center;
@@ -70,13 +74,33 @@ button{
 }
 
 /* when signed in */
-.session-links{
+.user-info{
   display: flex;
   align-items: center;
 }
 
-.session-links p{
+.user-info p{
   padding-left: 30px;
+  align-items: center;
+  text-align: center;
+}
+
+.user-info button:hover{
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+
+.user-info:hover{
+  cursor: pointer;
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+
+.profile-dropdown{
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
 }
 
 /* when signed out */
