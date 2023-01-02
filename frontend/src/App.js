@@ -1,17 +1,17 @@
 import React from "react";
-// import { Switch, Route } from "react-router-dom";
-// import SignupFormPage from "./store/components/SignupFormPage";
+import { Switch, Route } from "react-router-dom";
 import Navigation from "./store/components/Navigation";
+import NotFound from "./store/components/NotFound/NotFoundIndex";
 
 function App() {
   return (
     <>
       <Navigation />
-        {/* <Switch>
-          <Route path="/signup">
-            <SignupFormPage />
+        <Switch>
+          <Route exact path="/">
           </Route>
-        </Switch> */}
+          <Route component={NotFound} />
+        </Switch>
     </>
   );
 }
