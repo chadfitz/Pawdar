@@ -33,11 +33,12 @@ input:hover{
 
 /* input:focus{
   border: 1px solid var(--primary-color);
-}
+} */
 
 input:focus-visible{
   border: 1px solid var(--primary-color);
-} */
+  outline: none;
+}
 
 form button{
   font-family: var(--primary-font);  
