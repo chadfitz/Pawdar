@@ -49,9 +49,9 @@ const Navigation = () => {
               <FaHeart size={30}/>
             {/* otherwise link to sign-up */}
           </div>
-          <div className='nav-user'>
+          <>
             {sessionLinks}
-          </div>
+          </>
         </div>
       </div>
     </nav>
