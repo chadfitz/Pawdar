@@ -22,6 +22,10 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
 
   has_one_attached :photo
+  has_many :favorites
+  has_many :favorite_animals,
+    through: :favorites,
+    source: :animal
 
   def self.find_by_credentials(credential, password)
       if URI::MailTo::EMAIL_REGEXP.match(credential)
