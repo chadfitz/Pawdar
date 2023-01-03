@@ -78,7 +78,7 @@ const LoginForm = () => {
         or log in with Demo User
       </div>
       <div className="lower-content">
-        <button onClick={demoLogin}>Demo Login</button>
+        <button onClick={demoLogin}>DEMO LOG IN</button>
       </div>
     </div>
   );
