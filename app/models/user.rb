@@ -21,6 +21,8 @@ class User < ApplicationRecord
   attr_reader :password
   before_validation :ensure_session_token
 
+  has_one_attached :photo
+
   def self.find_by_credentials(credential, password)
       if URI::MailTo::EMAIL_REGEXP.match(credential)
         user = User.find_by(email: credential)
