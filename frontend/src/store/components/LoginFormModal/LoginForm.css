@@ -57,20 +57,24 @@ input:focus-visible{
   transition: .3s;
 }
 
-.divider{
-  margin-top: 15px;
-  margin-bottom: 25px;
+.login-modal-divider{
+  margin-top: 80px;
+  margin-bottom: 50px;
   text-align: center;
   font-size: 16px;
   line-height: 1.6;
 }
 
-.divider::before{
+.login-modal-divider::before{
   content: "";
   display: block;
   width: 340px;
   position: absolute;
-  bottom: 36%;
+  bottom: 40%;
   border-top: 2px solid var(--border-color);
   overflow: hidden;
+}
+
+.login-error{
+  color: red;
 }

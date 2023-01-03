@@ -32,13 +32,31 @@ const SignupForm = () => {
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
 
+  const demoLogin = (e) => {
+    e.preventDefault();
+    setErrors([]);
+    return dispatch(sessionActions.login({ credential: 'Demo-lition', password: 'password' }))
+      .catch(async (res) => {
+        let data;
+        try {
+          // .clone() essentially allows you to read the response body twice
+          data = await res.clone().json();
+        } catch {
+          data = await res.text(); // Will hit this case if the server is down
+        }
+        if (data?.errors) setErrors(data.errors);
+        else if (data) setErrors([data]);
+        else setErrors([res.statusText]);
+      });
+  };
+
   return (
     <div className="inner-signup-modal-content-container">
       <div className="signup-modal-upper-content">
         <h1>Sign Up</h1>
         <form onSubmit={handleSubmit}>
           <ul>
-            {errors.map(error => <li key={error}>{error}</li>)}
+            {errors.map(error => <li className="signup-error" key={error}>{error}</li>)}
           </ul>
           <label>
             <input type="text" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} required />
@@ -54,6 +72,9 @@ const SignupForm = () => {
           </label>
           <button>SIGN UP</button>
         </form>
+      </div>
+      <div className="signup-modal-lower-content">
+        <button onClick={demoLogin}>DEMO LOG IN</button>
       </div>
     </div>
   );

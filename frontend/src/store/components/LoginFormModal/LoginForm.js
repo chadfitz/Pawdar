@@ -51,7 +51,7 @@ const LoginForm = () => {
         <h1>Log In</h1>
         <form onSubmit={handleSubmit}>
           <ul>
-            {errors.map(error => <li key={error}>{error}</li>)}
+            {errors.map(error => <li className="login-error" key={error}>{error}</li>)}
           </ul>
           <label>
             <input
@@ -74,10 +74,10 @@ const LoginForm = () => {
           <button type="submit">LOG IN</button>
         </form>
       </div>
-      <div className="divider">
+      <div className="login-modal-divider">
         or log in with Demo User
       </div>
-      <div className="lower-content">
+      <div className="login-modal-lower-content">
         <button onClick={demoLogin}>DEMO LOG IN</button>
       </div>
     </div>
