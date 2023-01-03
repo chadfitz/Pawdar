@@ -3,13 +3,13 @@
 }
 
 nav{
+  border: 2px solid red;
   width: 100vw;
   box-sizing: border-box;
   height: var(--height);
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid red;
   font-weight: bold;
   letter-spacing: 1.3px;
   font-size: 17px;
@@ -17,13 +17,13 @@ nav{
 }
 
 .region--inner{
+  border: 1px solid green;
   height: 100%;
   display: flex;
   justify-content: space-between;
   width: 100%;
   max-width: 1220px;
-  border: 1px solid green;
-  color: #4d4751;
+  color: var(--font-color);
 }
 
 button{
@@ -108,7 +108,7 @@ button{
 
 .profile-dropdown{
   position: absolute;
-  top: 70px;
+  top: var(--height);
   width: 215px;
   display: flex;
   flex-direction: column;
