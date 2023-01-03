@@ -34,7 +34,7 @@ const SignupForm = () => {
 
   return (
     <div className="inner-signup-modal-content-container">
-      <div className="upper-content">
+      <div className="signup-modal-upper-content">
         <h1>Sign Up</h1>
         <form onSubmit={handleSubmit}>
           <ul>

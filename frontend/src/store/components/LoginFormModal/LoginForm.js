@@ -47,7 +47,7 @@ const LoginForm = () => {
 
   return (
     <div className="inner-login-modal-content-container">
-      <div className="upper-content">
+      <div className="login-modal-upper-content">
         <h1>Log In</h1>
         <form onSubmit={handleSubmit}>
           <ul>
