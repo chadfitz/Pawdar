@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import Hero from "./store/components/Hero/HeroIndex";
 import Navigation from "./store/components/Navigation";
 import NotFound from "./store/components/NotFound/NotFoundIndex";
 
@@ -9,6 +10,7 @@ function App() {
       <Navigation />
         <Switch>
           <Route exact path="/">
+            <Hero />
           </Route>
           <Route component={NotFound} />
         </Switch>
