@@ -32,15 +32,14 @@ const ProfileButton = ({ user }) => {
   return (
     <>
       <button onClick={openMenu}>
-        <div>
+        <div className="profile-nav-button">
           <IoMdPerson size={30}/>
-          {user.username.toUpperCase()}
+          <p>&nbsp;&nbsp;{user.username}</p>
         </div>
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
           <li>{user.username}</li>
-          <li>{user.email}</li>
           <li><button onClick={logout}>Log Out</button></li>
         </ul>
       )}  

@@ -16,7 +16,6 @@ const Navigation = () => {
     sessionLinks = (
       <div className='user-info'>
           <ProfileButton user={sessionUser} />
-          {/* <p>{sessionUser.username.toUpperCase()}</p> */}
       </div>
     );
   } else {
@@ -31,13 +30,6 @@ const Navigation = () => {
       </>
     );
   }
-
-  // let favoriteLink;
-  // if (sessionUser) {
-  //   favoriteLink = (
-
-  //   )
-  // }
 
   return (
     <nav className='nav-bar'>

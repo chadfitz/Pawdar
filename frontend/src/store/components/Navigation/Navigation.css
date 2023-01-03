@@ -31,8 +31,6 @@ button{
   font-family: var(--primary-font);
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
-  letter-spacing: 1px;
-  font-size: 17px;
 }
 
 .nav-left{
@@ -73,6 +71,12 @@ button{
   padding-right: 30px;
 }
 
+.nav-user{
+  display: flex;
+  align-items: center;
+  width: 215px;
+}
+
 /* when signed in */
 .user-info{
   display: flex;
@@ -80,7 +84,6 @@ button{
 }
 
 .user-info p{
-  padding-left: 30px;
   align-items: center;
   text-align: center;
 }
@@ -97,20 +100,60 @@ button{
   transition: 0.3s;
 }
 
-.profile-dropdown{
-  display: flex;
-  flex-direction: column;
-  overflow: visible;
-}
-
-/* when signed out */
-.nav-user{
+.profile-nav-button{
+  padding-left: 30px;
   display: flex;
   align-items: center;
 }
 
-.nav-user button{
+.profile-dropdown{
+  position: absolute;
+  top: 70px;
+  width: 215px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  background-color: #410078;
+  border-radius: 0 0 10px 10px;
+  padding: 25px 0 30px 30px;
+}
+
+.profile-dropdown:hover{
+  cursor: auto;
+}
+
+.profile-dropdown li{
+  width: 100%;
+  color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: normal;
+}
+
+.profile-dropdown li button{
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: normal;
+}
+
+.profile-dropdown li:hover, .profile-dropdown li button:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* when signed out */
+.login-button button{
   padding-left: 30px;
+  letter-spacing: 1px;
+  font-size: 17px;
+}
+
+.signup-button button{
+  padding-left: 30px;
+  letter-spacing: 1px;
+  font-size: 17px;
 }
 
 .login-button button:hover{
