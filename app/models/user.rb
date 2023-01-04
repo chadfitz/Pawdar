@@ -21,7 +21,6 @@ class User < ApplicationRecord
   attr_reader :password
   before_validation :ensure_session_token
 
-  has_one_attached :photo
   has_many :favorites
   has_many :favorite_animals,
     through: :favorites,

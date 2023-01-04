@@ -3,7 +3,7 @@
 # Table name: animals
 #
 #  id              :bigint           not null, primary key
-#  type            :string           not null
+#  species         :string           not null
 #  breed           :string
 #  size            :string
 #  gender          :string
@@ -19,9 +19,11 @@
 #  updated_at      :datetime         not null
 #
 class Animal < ApplicationRecord
-  validates :type, presence: true
+  validates :species, presence: true
 
   belongs_to :organization
+
+  has_one_attached :photo
 
   has_many :favorites
   has_many :favorited_by,

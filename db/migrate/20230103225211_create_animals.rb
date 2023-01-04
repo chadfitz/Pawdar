@@ -13,7 +13,6 @@ class CreateAnimals < ActiveRecord::Migration[7.0]
       t.string :description
       t.string :environment
       t.references :organization, null: false, foreign_key: true
-      t.index [:organization_id, :organization_id], unique: true
 
       t.timestamps
     end
