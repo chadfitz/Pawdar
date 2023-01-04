@@ -12,6 +12,10 @@ const AnimalShow = () => {
     dispatch(fetchAnimal(animalId));
   }, [animalId])
 
+  if (!animal){
+    return null;
+  }
+
   return(
     <>
       <h2>{animal.name}</h2>
@@ -23,7 +27,7 @@ const AnimalShow = () => {
       <p>{animal.coat}</p>
       <p>{animal.status}</p>
       <p>{animal.environment}</p>
-      <Link to="/api/animals">Animal Index</Link>
+      <Link to="/animals">Animal Index</Link>
     </>
   )
 }

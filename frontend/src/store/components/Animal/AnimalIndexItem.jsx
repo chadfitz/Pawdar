@@ -7,7 +7,9 @@ const AnimalIndexItem = ({ animal }) => {
 
   return (
     <li>
-      <Link to={`/organizations/${animal.organization_id}/animals/${animal.id}`}>{animal.name}</Link>
+      {/* <Link to={`/organizations/${animal.organization_id}/animals/${animal.id}`}>{animal.name}</Link> */}
+      <Link to={`/animals/${animal.id}`}>{animal.name}</Link>
+
     </li>
   )
 }
