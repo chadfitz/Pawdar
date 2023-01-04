@@ -74,14 +74,14 @@ export const fetchAnimal = (animalId) => async (dispatch) => {
 //   }
 // }
 
-export const deleteAnimal = (animalId) => async (dispatch) => {
-  const res = await fetch(`/api/animals/${animalId}`, {
-    method: "DELETE"
-  });
-  if (res.ok) {
-    dispatch(removeAnimal(animalId));
-  }
-};
+// export const deleteAnimal = (animalId) => async (dispatch) => {
+//   const res = await fetch(`/api/animals/${animalId}`, {
+//     method: "DELETE"
+//   });
+//   if (res.ok) {
+//     dispatch(removeAnimal(animalId));
+//   }
+// };
 
 // ANIMALS REDUCER
 const animalsReducer = (state={}, action) => {
