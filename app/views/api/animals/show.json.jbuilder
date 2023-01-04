@@ -1,0 +1,6 @@
+json.organization_id @animal.organization_id
+json.animal do 
+  json.set! @animal.id do
+    json.extract! @animal, :species, :breed, :size, :gender, :age, :color, :coat, :status, :name, :description
+  end
+end

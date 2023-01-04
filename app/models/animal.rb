@@ -12,7 +12,6 @@
 #  coat            :string
 #  status          :string
 #  name            :string
-#  description     :string
 #  environment     :string
 #  organization_id :bigint           not null
 #  created_at      :datetime         not null

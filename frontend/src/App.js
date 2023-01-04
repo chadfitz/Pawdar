@@ -12,6 +12,9 @@ function App() {
           <Route exact path="/">
             <Hero />
           </Route>
+          <Route exact path="/api/animals">
+
+          </Route>
           <Route component={NotFound} />
         </Switch>
     </>
