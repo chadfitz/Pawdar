@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: petfinder_clone_production
-  username: petfinder_clone
-  password: <%= ENV["PETFINDER_CLONE_DATABASE_PASSWORD"] %>
+  # database: petfinder_clone_production
+  # username: petfinder_clone
+  # password: <%= ENV["PETFINDER_CLONE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
