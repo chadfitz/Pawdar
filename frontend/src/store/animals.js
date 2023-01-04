@@ -1,0 +1,1 @@
+export const RECEIVE_ANIMAL = 'animals/RECEIVE_ANIMAL';
