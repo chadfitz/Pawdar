@@ -37,37 +37,50 @@ ApplicationRecord.transaction do
   end
 
   puts "Creating organizations..."
+  #1
   Organization.create!({
     name: "Give Me Shelter Cat Rescue",
     location: "PO Box 411013, San Francisco, CA 94141"
   })
+  #2
   Organization.create!({
     name: "Purrs and Whiskers",
     location: "New Hartford, NY"
   })
+  #3
   Organization.create!({
     name: "Caring Hearts Feline Rescue",
     location: "Versailles, KY"
   })
+  #4
   Organization.create!({
     name: "Teller County Regional Animal Shelter",
     location: "PO Box 904, 308 Weaverville Rd, Divide, CO 80814"
   })
+  #5
   Organization.create!({
     name: "PALS Haven",
     location: "5113 W. Sargent Rd., Lodi, CA 95242"
   })
+  #6
   Organization.create!({
     name: "Rescue Dogs Dream, Inc",
     location: "Inverness, FL"
   })
+  #7
   Organization.create!({
     name: "Tall Tails Rescue",
     location: "Fort Worth, TX"
   })
+  #8
   Organization.create!({
     name: "Okandogs",
     location: "Cashmere, WA"
+  })
+  #9
+  Organization.create!({
+    name: "Love & Second Chances",
+    location: "San Ramon, CA"
   })
 
   puts "Creating Animals..."
@@ -429,6 +442,34 @@ ApplicationRecord.transaction do
     organization_id: 8
   })
 
+  dog_16 = Animal.create!({
+    species: "Dog",
+    breed: "Jindo Mix",
+    size: "Medium",
+    gender: "Male",
+    age: "Puppy",
+    color: "Apricot / Beige, White / Cream",
+    coat: "Medium",
+    status: "adoptable",
+    name: "Pickle",
+    environment: "Good with other dogs",
+    organization_id: 9
+  })
+
+  dog_17 = Animal.create!({
+    species: "Dog",
+    breed: "Jindo Mix",
+    size: "Medium",
+    gender: "Female",
+    age: "Puppy",
+    color: "Black / Brown",
+    coat: "Medium",
+    status: "adoptable",
+    name: "Bana",
+    environment: "Good with other dogs, children",
+    organization_id: 9
+  })
+
   puts "Attaching photos to animals..."
   cat_1.photo.attach(io: URI.open("https://pawdar-dev.s3.us-west-1.amazonaws.com/cat_1_chelsea.jpg"), filename: "cat_1_chelsea.jpg")
   cat_2.photo.attach(io: URI.open("https://pawdar-dev.s3.us-west-1.amazonaws.com/cat_2_harley.jpg"), filename: "cat_2_harley.jpg")
@@ -456,5 +497,7 @@ ApplicationRecord.transaction do
   dog_13.photo.attach(io: URI.open("https://pawdar-dev.s3.us-west-1.amazonaws.com/dog_13_vetta.jpg"), filename: "dog_13_vetta.jpg")
   dog_14.photo.attach(io: URI.open("https://pawdar-dev.s3.us-west-1.amazonaws.com/dog_14_chevy.jpg"), filename: "dog_14_chevy.jpg")
   dog_15.photo.attach(io: URI.open("https://pawdar-dev.s3.us-west-1.amazonaws.com/dog_15_nova.jpg"), filename: "dog_15_nova.jpg")
+  dog_16.photo.attach(io: URI.open("https://pawdar-dev.s3.us-west-1.amazonaws.com/dog_16_pickle.jpg"), filename: "dog_16_pickle.jpg")
+  dog_17.photo.attach(io: URI.open("https://pawdar-dev.s3.us-west-1.amazonaws.com/dog_17_bana.jpg"), filename: "dog_17_bana.jpg")
   puts "Done!"
 end

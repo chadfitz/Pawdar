@@ -14,12 +14,10 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Hero />
-          </Route>
+            <AnimalIndex />
+        </Route>
           <Route exact path="/user/profile" component={ProfilePage} />
-          <Route exact path="/animals" component={AnimalIndex} />
-          {/* <Route exact path="/api/organizations/:organizationId/animals/:animalId" component={AnimalShow} /> */}
           <Route exact path="/animals/:animalId" component={AnimalShow} />
-
           <Route component={NotFound} />
         </Switch>
     </>

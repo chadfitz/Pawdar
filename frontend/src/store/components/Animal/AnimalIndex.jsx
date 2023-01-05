@@ -13,11 +13,12 @@ const AnimalIndex = () => {
   }, [])
 
   return (
-    <>
-      <ul>
+    <div className='animal-index-container'>
+      <h1 className='animal-index-header'>Future Pets</h1>
+      <ul className='animal-index-list'>
         {animals.map(animal => <AnimalIndexItem key={animal.id} animal={animal} />)}
       </ul>
-    </>
+    </div>
   )
 }
 
