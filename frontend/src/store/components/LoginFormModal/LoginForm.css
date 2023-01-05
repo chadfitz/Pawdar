@@ -58,8 +58,8 @@ input:focus-visible{
 }
 
 .login-modal-divider{
-  margin-top: 80px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 30px;
   text-align: center;
   font-size: 16px;
   line-height: 1.6;
@@ -70,7 +70,7 @@ input:focus-visible{
   display: block;
   width: 340px;
   position: absolute;
-  bottom: 40%;
+  bottom: 36%;
   border-top: 2px solid var(--border-color);
   overflow: hidden;
 }

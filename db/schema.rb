@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_03_183852) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_04_022612) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,39 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_03_183852) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "animals", force: :cascade do |t|
+    t.string "species", null: false
+    t.string "breed"
+    t.string "size"
+    t.string "gender"
+    t.string "age"
+    t.string "color"
+    t.string "coat"
+    t.string "status"
+    t.string "name"
+    t.string "environment"
+    t.bigint "organization_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organization_id"], name: "index_animals_on_organization_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "animal_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["animal_id"], name: "index_favorites_on_animal_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "organizations", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "location", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "username", null: false
@@ -56,4 +89,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_03_183852) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "animals", "organizations"
+  add_foreign_key "favorites", "animals"
+  add_foreign_key "favorites", "users"
 end
