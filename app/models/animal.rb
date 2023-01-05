@@ -24,6 +24,7 @@ class Animal < ApplicationRecord
 
   has_one_attached :photo
 
+  has_many :meet_and_greets
   has_many :favorites
   has_many :favorited_by,
     through: :favorites,

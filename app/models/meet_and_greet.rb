@@ -11,4 +11,8 @@
 #  updated_at :datetime         not null
 #
 class MeetAndGreet < ApplicationRecord
+  validates :start_time, :date, presence: true
+
+  belongs_to :user
+  belongs_to :animal
 end
