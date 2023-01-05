@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAnimal, fetchAnimal } from '../../animals';
+import './AnimalShow.css';
 
 const AnimalShow = () => {
   const {animalId} = useParams();
@@ -10,25 +11,40 @@ const AnimalShow = () => {
 
   useEffect(()=>{
     dispatch(fetchAnimal(animalId));
-  }, [animalId])
+  }, [animalId, dispatch])
 
   if (!animal){
     return null;
   }
 
   return(
-    <>
-      <h2>{animal.name}</h2>
-      <p>{animal.breed}</p>
-      <p>{animal.size}</p>
-      <p>{animal.gender}</p>
-      <p>{animal.age}</p>
-      <p>{animal.color}</p>
-      <p>{animal.coat}</p>
-      <p>{animal.status}</p>
-      <p>{animal.environment}</p>
-      <Link to="/animals">Animal Index</Link>
-    </>
+    <div className='animal-show-window'>
+      <div className='animal-image-container'>
+        <img src={animal.photoUrl} alt="" />
+      </div>
+      <div className='animal-show-container'>
+        <div className='animal-show-left'>
+          <div className='animal-show-top-section'>
+            <h1>{animal.name}</h1>
+            <p>{animal.breed}</p>
+          </div>
+          <div className='animal-show-middle-section'>
+            <ul>
+              <li>{animal.age}</li>
+              <li className='not-first'>{animal.gender}</li>
+              <li className='not-first'>{animal.size}</li>
+              <li className='not-first'>{animal.color}</li>
+            </ul>
+          </div>
+          <div className='animal-show-bottom-section'>
+            <h2>About</h2>
+            <p>{animal.coat}</p>
+            <p>{animal.status}</p>
+            <p>{animal.environment}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 

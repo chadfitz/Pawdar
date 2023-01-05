@@ -14,11 +14,6 @@ export const receiveAnimal = (animal) => ({
   animal
 })
 
-// export const removeAnimal = (animalId) => ({
-//   type: REMOVE_ANIMAL,
-//   animalId
-// })
-
 export const getAnimals = (state) => {
   return state?.animals ? Object.values(state.animals) : [];
 }
@@ -44,58 +39,16 @@ export const fetchAnimal = (animalId) => async (dispatch) => {
   }
 }
 
-// export const createAnimal = (animal) => async(dispatch) => {
-//   const res = await fetch(`/api/animals`, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       'Accept': 'application/json'
-//     },
-//     body: JSON.stringify(post)
-//   });
-//   if (res.ok){
-//     const newAnimal = await res.json();
-//     dispatch(receiveAnimal(newAnimal));
-//   }
-// }
-
-// export const updateAnimal = (animal) => async (dispatch) => {
-//   const res = await fetch(`/api/animals/${animal.id}`, {
-//     method: 'PATCH',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       'Accept': 'application/json'
-//     },
-//     body: JSON.stringify(animal)
-//   });
-//   if (res.ok){
-//     const newAnimal = await res.json();
-//     dispatch(receiveAnimal(newAnimal));
-//   }
-// }
-
-// export const deleteAnimal = (animalId) => async (dispatch) => {
-//   const res = await fetch(`/api/animals/${animalId}`, {
-//     method: "DELETE"
-//   });
-//   if (res.ok) {
-//     dispatch(removeAnimal(animalId));
-//   }
-// };
-
 // ANIMALS REDUCER
 const animalsReducer = (state={}, action) => {
   Object.freeze(state);
   let newState = {...state};
-
+  // debugger;
   switch(action.type){
     case RECEIVE_ANIMALS:
       return {...newState, ...action.animals};
     case RECEIVE_ANIMAL:
-      return {...newState, [action.animal.id]: action.animal};
-    // case REMOVE_POST:
-    //   delete newState[action.postId];
-    //   return newState;
+      return {...newState, [action.animal.animal.id]: action.animal.animal};
     default:
       return state;
   }

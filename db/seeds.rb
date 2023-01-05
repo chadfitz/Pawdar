@@ -90,7 +90,7 @@ ApplicationRecord.transaction do
     breed: "Dilute Calico & Domestic Short Hair Mix",
     size: "Medium",
     gender: "Female",
-    age: "Adule",
+    age: "Adult",
     color: "Dilute Calico",
     coat: "Short",
     status: "adoptable",

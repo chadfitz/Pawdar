@@ -4,4 +4,3 @@
     json.photoUrl animal.photo.url
   end
 end
-

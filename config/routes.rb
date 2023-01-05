@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :organizations, only: [:index, :show] do
       resources :animals, only: [:show]
     end
-    resources :animals, only: :index
+    resources :animals, only: [:index, :show]
     resource :session, only: [:show, :create, :destroy]
   end
 
