@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_04_022612) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_05_191259) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -68,6 +68,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_04_022612) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
+  create_table "meet_and_greets", force: :cascade do |t|
+    t.time "start_time", null: false
+    t.date "date", null: false
+    t.bigint "user_id", null: false
+    t.bigint "animal_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["animal_id"], name: "index_meet_and_greets_on_animal_id"
+    t.index ["user_id"], name: "index_meet_and_greets_on_user_id"
+  end
+
   create_table "organizations", force: :cascade do |t|
     t.string "name", null: false
     t.string "location", null: false
@@ -92,4 +103,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_04_022612) do
   add_foreign_key "animals", "organizations"
   add_foreign_key "favorites", "animals"
   add_foreign_key "favorites", "users"
+  add_foreign_key "meet_and_greets", "animals"
+  add_foreign_key "meet_and_greets", "users"
 end
