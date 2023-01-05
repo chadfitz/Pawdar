@@ -2,6 +2,7 @@ export const RECEIVE_MEET_AND_GREETS = 'meetAndGreets/RECEIVE_MEET_AND_GREETS';
 export const RECEIVE_MEET_AND_GREET = 'meetAndGreets/RECEIVE_MEET_AND_GREET';
 export const REMOVE_MEET_AND_GREET = 'meetAndGreets/REMOVE_MEET_AND_GREET';
 
+// ACTION CREATORS
 export const receiveMeetAndGreets = (meetAndGreets) => ({
   type: RECEIVE_MEET_AND_GREETS,
   meetAndGreets
@@ -25,6 +26,7 @@ export const getMeetAndGreet = (meetAndGreetId) => (state) => {
   return state?.meetAndGreets ? state.meetAndGreets[meetAndGreetId] : null;
 }
 
+// THUNK ACTION CREATORS
 export const fetchMeetAndGreets = () => async (dispatch) => {
   const res = await fetch('/api/meetAndGreets');
   if (res.ok){
@@ -80,6 +82,7 @@ export const deleteMeetAndGreet = (meetAndGreetId) => async (dispatch) => {
   }
 };
 
+// REDUCER
 const meetAndGreetsReducer = (state={}, action) => {
   Object.freeze(state);
   let newState = {...state};

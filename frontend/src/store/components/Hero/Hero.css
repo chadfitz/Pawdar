@@ -102,26 +102,21 @@ img{
   width: 100%;
 }
 
-input{
-  /* cursor: default; */
-  /* cursor: text;
-  border: 1px solid gray;
-  width: 100%; */
+.search-bar input{
   border: 1px solid #fff;
   box-shadow: inset 0 -3px #fff;
-  /* height: 60px; */
   padding: 12px;
   width: inherit;
   border-radius: 5px;
 }
 
-input:focus, input:hover {
+.search-bar input:focus, .search-bar input:hover {
   border: 1px solid var(--primary-color);
   border-radius: 5px;
   box-shadow: inset 0 -3px var(--primary-color);
 }
 
-input:focus-visible {
+.search-bar input:focus-visible {
   outline-offset: 0px;
 }
 

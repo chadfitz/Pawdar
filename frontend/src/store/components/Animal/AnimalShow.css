@@ -22,12 +22,15 @@
 }
 
 .animal-show-container{
+  border: 1px solid red;
   margin-bottom: 40px;
   margin-top: 30px;
   padding-bottom: 30px;
   max-width: 1220px;
   margin: auto;
   height: auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .animal-show-left{
@@ -91,4 +94,21 @@
   padding-left: 10px;
   font-size: 14px;
   font-weight: none;
+}
+
+.animal-show-right{
+  border: 1px solid blue;
+  width: 35%;
+  /* height: auto; */
+}
+
+.animal-show-upper-right{
+  border: 1px solid cyan;
+  width: 100%;
+  /* background-color: var(--primary-color); */
+  border-radius: 20px;
+}
+
+.meet-form-header{
+  
 }

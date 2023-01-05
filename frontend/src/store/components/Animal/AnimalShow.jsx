@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAnimal, fetchAnimal } from '../../animals';
+import MeetAndGreetForm from '../MeetAndGreet/MeetAndGreetForm'
 import './AnimalShow.css';
 
 const AnimalShow = () => {
@@ -44,6 +45,12 @@ const AnimalShow = () => {
             <p>{animal.status}</p>
             <h3>ENVIRONMENT</h3>
             <p>{animal.environment}</p>
+          </div>
+        </div>
+        <div className='animal-show-right'>
+          <div className='animal-show-upper-right'>
+            <h2 className='meet-form-header'>Considering {animal.name} for adoption?</h2>
+            <MeetAndGreetForm />
           </div>
         </div>
       </div>
