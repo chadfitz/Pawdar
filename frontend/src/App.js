@@ -5,6 +5,7 @@ import Navigation from "./store/components/Navigation";
 import NotFound from "./store/components/NotFound/NotFoundIndex";
 import AnimalIndex from "./store/components/Animal/AnimalIndex";
 import AnimalShow from "./store/components/Animal/AnimalShow";
+import ProfilePage from "./store/components/ProfilePage/ProfilePageIndex";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route exact path="/">
             <Hero />
           </Route>
+          <Route exact path="/user/profile" component={ProfilePage} />
           <Route exact path="/animals" component={AnimalIndex} />
           {/* <Route exact path="/api/organizations/:organizationId/animals/:animalId" component={AnimalShow} /> */}
           <Route exact path="/animals/:animalId" component={AnimalShow} />

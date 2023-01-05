@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../session";
 import { IoMdPerson } from "react-icons/io";
+import { NavLink } from "react-router-dom";
 
 const ProfileButton = ({ user }) => {
   const dispatch = useDispatch();
@@ -44,8 +45,7 @@ const ProfileButton = ({ user }) => {
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          {/* <li>{user.username}</li> */}
-          <li>Account Info</li>
+          <li><NavLink exact to="/user/profile"/>Account Info</li>
           <li><button onClick={logout}>Log Out</button></li>
         </ul>
       )}  
