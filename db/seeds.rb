@@ -27,15 +27,6 @@ ApplicationRecord.transaction do
     password: 'password'
   )
 
-  # More users
-  10.times do 
-    User.create!({
-      username: Faker::Internet.unique.username(specifier: 3),
-      email: Faker::Internet.unique.email,
-      password: 'password'
-    }) 
-  end
-
   puts "Creating organizations..."
   #1
   Organization.create!({
@@ -87,385 +78,390 @@ ApplicationRecord.transaction do
 
   cat_1 = Animal.create!({
     species: "Cat",
+    name: "Chelsea",
     breed: "Dilute Calico & Domestic Short Hair Mix",
     size: "Medium",
     gender: "Female",
     age: "Adult",
     color: "Dilute Calico",
     coat: "Short",
-    status: "adoptable",
-    name: "Chelsea",
-    environment: "indoor only",
+    status: "Adoptable",
+    environment: "Indoor only",
     organization_id: 1
   })
 
   cat_2 = Animal.create!({
     species: "Cat",
+    name: "Harley",
     breed: "Tabby",
     size: "Medium",
     gender: "Male",
     age: "Adult",
     color: "Tabby (Orange/Red)",
     coat: "Short",
-    status: "adoptable",
-    name: "Harley",
-    environment: "indoor only",
+    status: "Adoptable",
+    environment: "Indoor only",
     organization_id: 1
   })
 
   cat_3 = Animal.create!({
     species: "Cat",
+    name: "Kiwi",
     breed: "Dilute Tortoiseshell & Domestic Short Hair Mix",
     size: "Small",
     gender: "Female",
     age: "Young",
     color: "Dilute Tortoiseshell",
     coat: "Short",
-    status: "adoptable",
-    name: "Kiwi",
-    environment: "indoor only",
+    status: "Adoptable",
+    environment: "Indoor only",
     organization_id: 1
   })
 
   cat_4 = Animal.create!({
     species: "Cat",
+    name: "Jack",
     breed: "Domestic Medium Hair",
     size: "Small",
     gender: "Male",
     age: "Young",
     color: "Gray & White",
     coat: "Medium",
-    status: "adoptable",
-    name: "Jack",
-    environment: "indoor only",
+    status: "Adoptable",
+    environment: "Indoor only",
     organization_id: 1
   })
 
   cat_5 = Animal.create!({
     species: "Cat",
+    name: "Sugar Plum",
     breed: "Domestic Short Hair",
     size: "Medium",
     gender: "Female",
     age: "Kitten",
     color: "Calico, White",
     coat: "Short",
-    status: "adoptable",
-    name: "Sugar Plum",
+    status: "Adoptable",
+    environment: "Prefers a home without other cats",
     organization_id: 2
   })
 
   cat_6 = Animal.create!({
     species: "Cat",
+    name: "Cheetara",
     breed: "Domestic Short Hair",
     size: "Medium",
     gender: "Female",
     age: "Young",
     color: "Tabby (Tiger Striped)",
     coat: "Short",
-    status: "adoptable",
-    name: "Cheetara",
+    status: "Adoptable",
+    environment: "Good with other cats",
     organization_id: 2
   })
 
   cat_7 = Animal.create!({
     species: "Cat",
+    name: "Peppermint",
     breed: "Domestic Short Hair",
     size: "Medium",
     gender: "Male",
     age: "Kitten",
     color: "Tabby (Tiger Striped), White",
     coat: "Short",
-    status: "adoptable",
-    name: "Peppermint",
+    status: "Adoptable",
+    environment: "Good with other cats, children",
     organization_id: 2
   })
 
   cat_8 = Animal.create!({
+    name: "Babee",
     species: "Cat",
     breed: "Domestic Short Hair",
     size: "Small",
     gender: "Female",
     age: "Kitten",
     color: "Black",
-    status: "adoptable",
-    name: "Babee",
+    status: "Adoptable",
+    environment: "Good with other cats",
     organization_id: 3
   })
 
   cat_9 = Animal.create!({
+    name: "Treasure",
     species: "Cat",
     breed: "Domestic Short Hair",
     size: "Small",
     gender: "Female",
     age: "Kitten",
     color: "Black",
-    status: "adoptable",
-    name: "Treasure",
+    status: "Adoptable",
     environment: "Prefers a home without dogs, children",
     organization_id: 3
   })
 
   cat_10 = Animal.create!({
     species: "Cat",
+    name: "Joker",
     breed: "Domestic Short Hair Mix",
     size: "Medium",
     gender: "Male",
     age: "Kitten",
     color: "Black",
     coat: "Medium",
-    status: "adoptable",
-    name: "Joker",
+    status: "Adoptable",
     environment: "Good with other cats",
     organization_id: 4
   })
 
   cat_11 = Animal.create!({
     species: "Cat",
+    name: "Pablano",
     breed: "Tabby",
     size: "Medium",
     gender: "Male",
     age: "Kitten",
     color: "Tabby (Brown/Chocolate)",
     coat: "Short",
-    status: "adoptable",
-    name: "Pablano",
+    status: "Adoptable",
     environment: "Good with other cats, children",
     organization_id: 5
   })
 
   dog_1 = Animal.create!({
     species: "Dog",
+    name: "Nikita",
     breed: "German Shepherd Dog & Smooth Collie Mix",
     size: "Medium",
     gender: "Female",
     age: "Adult",
     color: "White/Cream",
     coat: "Short",
-    status: "adoptable",
-    name: "Nikita",
+    status: "Adoptable",
     environment: "Good with other dogs",
     organization_id: 5
   })
 
   dog_2 = Animal.create!({
     species: "Dog",
+    name: "Riri",
     breed: "Mixed Breed",
     size: "Medium",
     gender: "Female",
     age: "Adult",
     color: "Red / Chestnut / Orange, White / Cream",
     coat: "Short",
-    status: "adoptable",
-    name: "Riri",
+    status: "Adoptable",
+    environment: "Good with children"
     organization_id: 4
   })
 
   dog_3 = Animal.create!({
     species: "Dog",
+    name: "Julie",
     breed: "Mixed Breed",
     size: "Medium",
     gender: "Female",
     age: "Adult",
     color: "Yellow / Tan / Blond / Fawn, White / Cream",
     coat: "Medium",
-    status: "adoptable",
-    name: "Julie",
+    status: "Adoptable",
     environment: "Prefers a home without children, Good with other dogs",
     organization_id: 4
   })
 
   dog_4 = Animal.create!({
     species: "Dog",
+    name: "Mollie",
     breed: "Shepherd Mix",
     size: "Large",
     gender: "Female",
     age: "Adult",
     color: "Yellow / Tan / Blond / Fawn, Black",
     coat: "Medium",
-    status: "adoptable",
-    name: "Mollie",
+    status: "Adoptable",
     environment: "Prefers a home without cats, children, other animals",
     organization_id: 4
   })
 
   dog_5 = Animal.create!({
     species: "Dog",
+    name: "Kenda",
     breed: " Dutch Shepherd Mix",
     size: "Large",
     gender: "Male",
     age: "Adult",
     color: "Brindle, White / Cream",
     coat: "Medium",
-    status: "adoptable",
-    name: "Kenda",
+    status: "Adoptable",
     environment: "Good with other dogs",
     organization_id: 6
   })
 
   dog_6 = Animal.create!({
     species: "Dog",
+    name: "Ryder",
     breed: "Labrador Retriever & Shepherd Mix",
     size: "Medium",
     gender: "Male",
     age: "Adult",
     color: "Golden",
     coat: "Short",
-    status: "adoptable",
-    name: "Ryder",
+    status: "Adoptable",
     environment: "Good with other dogs, children",
     organization_id: 6
   })
 
   dog_7 = Animal.create!({
     species: "Dog",
+    name: "Sally",
     breed: "Labrador Retriever Mix",
     size: "Large",
     gender: "Female",
     age: "Young",
     color: "Apricot / Beige, White / Cream",
     coat: "Short",
-    status: "adoptable",
-    name: "Sally",
+    status: "Adoptable",
     environment: "Good with other dogs, children",
     organization_id: 6
   })
 
   dog_8 = Animal.create!({
     species: "Dog",
+    name: "Robin",
     breed: "Cattle Dog & Australian Shepherd Mix",
     size: "Medium",
     gender: "Male",
     age: "Puppy",
     color: "Black",
     coat: "Medium",
-    status: "adoptable",
-    name: "Robin",
+    status: "Adoptable",
     environment: "Good with other dogs, cats, children",
     organization_id: 7
   })
 
   dog_9 = Animal.create!({
     species: "Dog",
+    name: "Buttons",
     breed: "Australian Shepherd & Border Collie Mix ",
     size: "Medium",
     gender: "Male",
     age: "Adult",
     color: "Black, White",
     coat: "Medium",
-    status: "adoptable",
-    name: "Buttons",
+    status: "Adoptable",
     environment: "Good with other dogs, children",
     organization_id: 7
   })
 
   dog_10 = Animal.create!({
     species: "Dog",
+    name: "Marley",
     breed: "Labrador Retriever Mix",
     size: "Medium",
     gender: "Male",
     age: "Adult",
     color: "Golden",
     coat: "Short",
-    status: "adoptable",
-    name: "Marley",
+    status: "Adoptable",
     environment: "Good with other dogs, children",
     organization_id: 7
   })
 
   dog_11 = Animal.create!({
     species: "Dog",
+    name: "Pax",
     breed: "Labrador Retriever Mix",
     size: "Medium",
     gender: "Male",
     age: "Puppy",
     color: "Gray & White",
     coat: "Short",
-    status: "adoptable",
-    name: "Pax",
+    status: "Adoptable",
     environment: "Good with other dogs, cats, children",
     organization_id: 7
   })
 
   dog_12 = Animal.create!({
     species: "Dog",
+    name: "Holly",
     breed: "Rat Terrier Mix",
     size: "Small",
     gender: "Female",
     age: "Puppy",
     color: "Golden, White / Cream",
     coat: "Short",
-    status: "adoptable",
-    name: "Holly",
+    status: "Adoptable",
     environment: "Good with other dogs, cats, children",
     organization_id: 8
   })
 
   dog_13 = Animal.create!({
     species: "Dog",
+    name: "Vetta",
     breed: "Husky & German Shepherd Dog Mix",
     size: "Large",
     gender: "Female",
     age: "Puppy",
     color: "Golden, Bicolor",
     coat: "Medium",
-    status: "adoptable",
-    name: "Vetta",
+    status: "Adoptable",
     environment: "Good with other dogs",
     organization_id: 8
   })
 
   dog_14 = Animal.create!({
     species: "Dog",
+    name: "Chevy",
     breed: "Husky & German Shepherd Dog Mix",
     size: "Large",
     gender: "Male",
     age: "Puppy",
     color: "Biclor",
     coat: "Long",
-    status: "adoptable",
-    name: "Chevy",
+    status: "Adoptable",
     environment: "Good with other dogs",
     organization_id: 8
   })
 
   dog_15 = Animal.create!({
     species: "Dog",
+    name: "Nova",
     breed: "Husky Mix",
     size: "Large",
     gender: "Female",
     age: "Puppy",
     color: "Gray / Blue / Silver, Black, White / Cream",
     coat: "Medium",
-    status: "adoptable",
-    name: "Nova",
+    status: "Adoptable",
     environment: "Good with other dogs, children",
     organization_id: 8
   })
 
   dog_16 = Animal.create!({
     species: "Dog",
+    name: "Pickle",
     breed: "Jindo Mix",
     size: "Medium",
     gender: "Male",
     age: "Puppy",
     color: "Apricot / Beige, White / Cream",
     coat: "Medium",
-    status: "adoptable",
-    name: "Pickle",
+    status: "Adoptable",
     environment: "Good with other dogs",
     organization_id: 9
   })
 
   dog_17 = Animal.create!({
     species: "Dog",
+    name: "Bana",
     breed: "Jindo Mix",
     size: "Medium",
     gender: "Female",
     age: "Puppy",
     color: "Black / Brown",
     coat: "Medium",
-    status: "adoptable",
-    name: "Bana",
+    status: "Adoptable",
     environment: "Good with other dogs, children",
     organization_id: 9
   })

@@ -38,8 +38,11 @@ const AnimalShow = () => {
           </div>
           <div className='animal-show-bottom-section'>
             <h2>About</h2>
+            <h3>COAT LENGTH</h3>
             <p>{animal.coat}</p>
+            <h3>STATUS</h3>
             <p>{animal.status}</p>
+            <h3>ENVIRONMENT</h3>
             <p>{animal.environment}</p>
           </div>
         </div>
