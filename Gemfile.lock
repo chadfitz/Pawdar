@@ -177,9 +177,12 @@ GEM
       zeitwerk (~> 2.5)
     rake (13.0.6)
     thor (1.2.1)
+    timeliness (0.4.4)
     timeout (0.3.1)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
+    validates_timeliness (5.0.0)
+      timeliness (>= 0.3.10, < 1)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -203,6 +206,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4)
   tzinfo-data
+  validates_timeliness
 
 RUBY VERSION
    ruby 3.1.1p18

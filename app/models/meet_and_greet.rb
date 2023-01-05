@@ -11,7 +11,9 @@
 #  updated_at :datetime         not null
 #
 class MeetAndGreet < ApplicationRecord
-  validates :start_time, :date, presence: true
+  # validates :start_time, time: { between: ["9:00am", "5:00pm"] }
+  validates_time :start_time, between: ["9:00am", "5:00pm"]
+  validates_date :date, after: Date.today
 
   belongs_to :user
   belongs_to :animal
