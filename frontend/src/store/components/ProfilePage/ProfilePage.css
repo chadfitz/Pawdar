@@ -45,18 +45,25 @@
   margin-bottom: 30px;
   font-size: 40px;
   font-weight: 400px;
-  /* margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px; */
 }
 
 .profile-tabs{
-  border: 1px solid purple;
+  /* border: 1px solid purple; */
   position: relative;
   margin-bottom: 35px;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 2.5;
+  font-weight: none;
   display: flex;
   border-bottom: 1px solid var(--border-color);
   justify-content: space-around;
+}
+
+.profile-tabs li:hover{
+  cursor: pointer;
+  border-bottom: 2px solid rgba(101, 4, 181, 0.5);
+}
+
+.open-tab{
+  border-bottom: 2px solid var(--primary-color);
 }

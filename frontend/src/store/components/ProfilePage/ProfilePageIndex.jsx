@@ -14,7 +14,11 @@ const ProfilePage = () => {
   
   const openAboutMe = e => {
     if (showAboutMe) return;
+    const tab = document.getElementsByClassName('open-tab');
+    tab[0].classList.remove('open-tab');
+
     setShowAboutMe(true);
+    e.currentTarget.classList.add('open-tab');
     setShowMeetAndGreets(false);
     setShowFavorites(false);
     setShowRecommended(false);
@@ -22,26 +26,39 @@ const ProfilePage = () => {
 
   const openMeetAndGreets = e => {
     if (showMeetAndGreets) return;
+    const tab = document.getElementsByClassName('open-tab');
+    tab[0].classList.remove('open-tab');
+
     setShowAboutMe(false);
     setShowMeetAndGreets(true);
+    e.currentTarget.classList.add('open-tab');
     setShowFavorites(false);
     setShowRecommended(false);
   }
 
   const openFavorites = e => {
     if (showFavorites) return;
+    const tab = document.getElementsByClassName('open-tab');
+    tab[0].classList.remove('open-tab');
+
     setShowAboutMe(false);
     setShowMeetAndGreets(false);
     setShowFavorites(true);
+    e.currentTarget.classList.add('open-tab');
     setShowRecommended(false);
   }
 
   const openRecommended = e => {
     if (showRecommended) return;
+    const tab = document.getElementsByClassName('open-tab');
+    tab[0].classList.remove('open-tab');
+
+    
     setShowAboutMe(false);
     setShowMeetAndGreets(false);
     setShowFavorites(false);
     setShowRecommended(true);
+    e.currentTarget.classList.add('open-tab');
   }
 
 
@@ -52,10 +69,10 @@ const ProfilePage = () => {
           <div className='profile-header-container'>
             <h1 className='profile-header'>My Pawdar</h1>
             <ul className='profile-tabs'>
-              <li onClick={openAboutMe}>About Me</li>
-              <li onClick={openMeetAndGreets}>Meet & Greets</li>
-              <li onClick={openFavorites}>Favorites</li>
-              <li onClick={openRecommended}>Recommended</li>
+              <li className='about-me-tab open-tab' onClick={openAboutMe}>About Me</li>
+              <li className='meet-and-greets-tab' onClick={openMeetAndGreets}>Meet & Greets</li>
+              <li className='favorites-tab' onClick={openFavorites}>Favorites</li>
+              <li className='recommended-tab' onClick={openRecommended}>Recommended</li>
             </ul>
           </div>
           <div className='profile-body'>

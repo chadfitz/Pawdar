@@ -1,3 +1,14 @@
-.meet-and-greet-index.hidden{
-  display: none;
+.meet-and-greets-container{
+  border: 1px solid cadetblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meet-and-greet{
+  border: 1px solid silver;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }

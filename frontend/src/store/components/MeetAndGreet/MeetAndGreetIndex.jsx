@@ -13,11 +13,9 @@ const MeetAndGreetIndex = () => {
   }, [dispatch, sessionUser])
 
   return (
-    <>
-      <ul>
-        {meetAndGreets.map(meetAndGreet => <MeetAndGreetIndexItem key={meetAndGreet.id} meetAndGreet={meetAndGreet} />)}
-      </ul>
-    </>
+    <div className='meet-and-greets-container'>
+      {meetAndGreets.map(meetAndGreet => <MeetAndGreetIndexItem key={meetAndGreet.id} meetAndGreet={meetAndGreet} />)}
+    </div>
   )
 }
 

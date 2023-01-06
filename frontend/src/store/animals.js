@@ -19,6 +19,7 @@ export const getAnimals = (state) => {
 }
 
 export const getAnimal = (animalId) => (state) => {
+  debugger;
   return state?.animals ? state.animals[animalId] : null;
 }
 
@@ -32,6 +33,7 @@ export const fetchAnimals = () => async (dispatch) => {
 }
 
 export const fetchAnimal = (animalId) => async (dispatch) => {
+  debugger;
   const res = await fetch(`/api/animals/${animalId}`);
   if (res.ok) {
     const animal = await res.json();
