@@ -10,7 +10,7 @@ const MeetAndGreetShow = () => {
 
   useEffect(()=>{
     dispatch(fetchMeetAndGreet(meetAndGreetId));
-  }, [meetAndGreetId])
+  }, [meetAndGreetId, dispatch])
 
   return(
     <>

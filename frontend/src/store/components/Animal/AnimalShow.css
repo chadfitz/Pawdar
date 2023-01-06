@@ -105,10 +105,9 @@
 .animal-show-upper-right{
   border: 1px solid cyan;
   width: 100%;
-  /* background-color: var(--primary-color); */
+  padding: 50px 30px;
+  background-color: var(--primary-color);
+  color: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
-}
-
-.meet-form-header{
-  
+  text-align: center;
 }

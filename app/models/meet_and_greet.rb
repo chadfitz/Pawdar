@@ -12,7 +12,7 @@
 #
 class MeetAndGreet < ApplicationRecord
   validates_time :start_time, between: ["9:00am", "5:00pm"]
-  validates_date :date, after: Date.today
+  validates_date :date, presence:true, after: :today, message: "Must be a date starting tomorrow or later"
 
   belongs_to :user
   belongs_to :animal

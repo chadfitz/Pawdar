@@ -49,7 +49,6 @@ const AnimalShow = () => {
         </div>
         <div className='animal-show-right'>
           <div className='animal-show-upper-right'>
-            <h2 className='meet-form-header'>Considering {animal.name} for adoption?</h2>
             <MeetAndGreetForm />
           </div>
         </div>

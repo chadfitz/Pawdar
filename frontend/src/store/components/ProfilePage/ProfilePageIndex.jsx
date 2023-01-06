@@ -15,10 +15,13 @@ const ProfilePage = () => {
             <h1 className='profile-header'>My Pawdar</h1>
             <ul className='profile-tabs'>
               <li>About Me</li>
-              <li>Meet & Greets</li>
+              <NavLink to="/user/profile/meetAndGreets"><li>Meet & Greets</li></NavLink>
               <li>Favorites</li>
               <li>Recommended</li>
             </ul>
+          </div>
+          <div className='profile-body'>
+            
           </div>
         </div>
       </div>
