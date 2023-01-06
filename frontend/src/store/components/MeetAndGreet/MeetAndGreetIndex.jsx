@@ -7,13 +7,16 @@ import { getMeetAndGreets, fetchMeetAndGreets } from '../../meetAndGreets';
 const MeetAndGreetIndex = () => {
   const dispatch = useDispatch();
   const meetAndGreets = useSelector(getMeetAndGreets);
+  const sessionUser = useSelector(state => state.session.user);
+  console.log(meetAndGreets);
 
   useEffect(()=>{
-    dispatch(fetchMeetAndGreets());
-  }, [dispatch])
+    dispatch(fetchMeetAndGreets(sessionUser));
+  }, [dispatch, sessionUser])
 
   return (
     <>
+      <div>test</div>
       <ul>
         {meetAndGreets.map(meetAndGreet => <MeetAndGreetIndexItem key={meetAndGreet.id} meetAndGreet={meetAndGreet} />)}
       </ul>

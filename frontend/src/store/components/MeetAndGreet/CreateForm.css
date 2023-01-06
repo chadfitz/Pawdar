@@ -1,16 +1,19 @@
 .form-header{
-  margin-bottom: 30px;
-  font-size: 30px;
+  margin-bottom: 20px;
+  font-size: 35px;
 }
 
 .meet-and-greet-form label{
   text-align: start;
   padding-bottom: 10px;
+  /* padding-top: 10px; */
+  margin-top: 10px;
 }
 
 .meet-and-greet-form input{
   border: none;
   outline: none;
+  margin-top: 10px;
 }
 
 .meet-and-greet-form input:hover{
@@ -25,9 +28,9 @@
 
 .meet-and-greet-form-button{
   width: 75%;
-  margin-top: 30px;
   width: 100%;
   height: 45px;
+  margin-top: 50px;
   border: 2px solid var(--primary-color);
   background-color: #fff;
   border-radius: 23px;

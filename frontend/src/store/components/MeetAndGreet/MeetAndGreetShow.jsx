@@ -7,10 +7,11 @@ const MeetAndGreetShow = () => {
   const {meetAndGreetId} = useParams();
   const dispatch = useDispatch();
   const meetAndGreet = useSelector(getMeetAndGreet(meetAndGreetId));
+  const sessionUser = useSelector(state => state.session.user);
 
   useEffect(()=>{
-    dispatch(fetchMeetAndGreet(meetAndGreetId));
-  }, [meetAndGreetId, dispatch])
+    dispatch(fetchMeetAndGreet(sessionUser, meetAndGreetId));
+  }, [meetAndGreetId, dispatch, sessionUser])
 
   return(
     <>

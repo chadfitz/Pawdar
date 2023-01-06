@@ -43,7 +43,6 @@ export const fetchAnimal = (animalId) => async (dispatch) => {
 const animalsReducer = (state={}, action) => {
   Object.freeze(state);
   let newState = {...state};
-  // debugger;
   switch(action.type){
     case RECEIVE_ANIMALS:
       return {...newState, ...action.animals};

@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { deleteMeetAndGreet } from '../../meetAndGreets';
 
 const MeetAndGreetIndexItem = ({ meetAndGreet }) => {
   const dispatch = useDispatch();
+  const sessionUser = useSelector(state => state.session.user);
 
   return (
-    <li>
+    <li>Test
       <Link to={`/user/profile/meetAndGreets/${meetAndGreet.id}`}>Meet & Greet</Link>
       <Link to={`/user/profile/meetAndGreets/${meetAndGreet.id}/edit`}>Edit</Link>
-      <button onClick={()=>dispatch(deleteMeetAndGreet(meetAndGreet.id))}>Delete</button>
+      <button onClick={()=>dispatch(deleteMeetAndGreet(sessionUser, meetAndGreet.id))}>Delete</button>
     </li>
   )
 }

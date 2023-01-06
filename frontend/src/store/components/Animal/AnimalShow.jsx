@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAnimal, fetchAnimal } from '../../animals';
-import MeetAndGreetForm from '../MeetAndGreet/MeetAndGreetForm'
+import MeetAndGreetCreateForm from '../MeetAndGreet/MeetAndGreetCreateForm'
 import './AnimalShow.css';
 
 const AnimalShow = () => {
@@ -49,7 +49,7 @@ const AnimalShow = () => {
         </div>
         <div className='animal-show-right'>
           <div className='animal-show-upper-right'>
-            <MeetAndGreetForm />
+            <MeetAndGreetCreateForm />
           </div>
         </div>
       </div>

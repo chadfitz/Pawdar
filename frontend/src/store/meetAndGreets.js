@@ -1,3 +1,5 @@
+import csrfFetch from "./csrf";
+
 export const RECEIVE_MEET_AND_GREETS = 'meetAndGreets/RECEIVE_MEET_AND_GREETS';
 export const RECEIVE_MEET_AND_GREET = 'meetAndGreets/RECEIVE_MEET_AND_GREET';
 export const REMOVE_MEET_AND_GREET = 'meetAndGreets/REMOVE_MEET_AND_GREET';
@@ -27,16 +29,16 @@ export const getMeetAndGreet = (meetAndGreetId) => (state) => {
 }
 
 // THUNK ACTION CREATORS
-export const fetchMeetAndGreets = () => async (dispatch) => {
-  const res = await fetch('/api/meetAndGreets');
+export const fetchMeetAndGreets = (user) => async (dispatch) => {
+  const res = await fetch(`/api/users/${user.id}/meetAndGreets`);
   if (res.ok){
     const meetAndGreets = await res.json();
     dispatch(receiveMeetAndGreets(meetAndGreets));
   }
 }
 
-export const fetchMeetAndGreet = (meetAndGreetId) => async (dispatch) => {
-  const res = await fetch(`/api/meetAndGreets/${meetAndGreetId}`);
+export const fetchMeetAndGreet = (user, meetAndGreetId) => async (dispatch) => {
+  const res = await fetch(`/api/users/${user.id}/meetAndGreets/${meetAndGreetId}`);
   if (res.ok) {
     const meetAndGreet = await res.json();
     dispatch(receiveMeetAndGreet(meetAndGreet));
@@ -44,13 +46,9 @@ export const fetchMeetAndGreet = (meetAndGreetId) => async (dispatch) => {
 }
 
 export const createMeetAndGreet = (meetAndGreet) => async(dispatch) => {
-  const res = await fetch(`/api/meetAndGreets`, {
-    method: 'MEET_AND_GREET',
-    headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    },
-    body: JSON.stringify(meetAndGreet)
+  const res = await csrfFetch(`/api/meet_and_greets`, {
+    method: 'POST',
+    body: JSON.stringify({meetAndGreet:meetAndGreet})
   });
   if (res.ok){
     const newMeetAndGreet = await res.json();
@@ -58,8 +56,8 @@ export const createMeetAndGreet = (meetAndGreet) => async(dispatch) => {
   }
 }
 
-export const updateMeetAndGreet = (meetAndGreet) => async (dispatch) => {
-  const res = await fetch(`/api/meetAndGreets/${meetAndGreet.id}`, {
+export const updateMeetAndGreet = (user, meetAndGreet) => async (dispatch) => {
+  const res = await fetch(`/api/users/${user.id}/meetAndGreets/${meetAndGreet.id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -73,8 +71,8 @@ export const updateMeetAndGreet = (meetAndGreet) => async (dispatch) => {
   }
 }
 
-export const deleteMeetAndGreet = (meetAndGreetId) => async (dispatch) => {
-  const res = await fetch(`/api/meetAndGreets/${meetAndGreetId}`, {
+export const deleteMeetAndGreet = (user, meetAndGreetId) => async (dispatch) => {
+  const res = await fetch(`/api/users/${user.id}/meetAndGreets/${meetAndGreetId}`, {
     method: "DELETE"
   });
   if (res.ok) {
