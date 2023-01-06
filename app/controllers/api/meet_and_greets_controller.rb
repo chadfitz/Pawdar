@@ -2,13 +2,13 @@ class Api::MeetAndGreetsController < ApplicationController
   before_action :require_logged_in
 
   def index
-    @meet_and_greets = current_user.meet_and_greets.all
+    # debugger
+    @meet_and_greets = current_user.meet_and_greets
     render :index
   end
 
   def show
     @meet_and_greet = current_user.meet_and_greets.find_by(id: params[:id])
-    # render 'api/users/meet_and_greets/show'
     render :show
   end
 

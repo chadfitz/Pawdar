@@ -8,7 +8,7 @@ const MeetAndGreetIndexItem = ({ meetAndGreet }) => {
   const sessionUser = useSelector(state => state.session.user);
 
   return (
-    <li>Test
+    <li>
       <Link to={`/user/profile/meetAndGreets/${meetAndGreet.id}`}>Meet & Greet</Link>
       <Link to={`/user/profile/meetAndGreets/${meetAndGreet.id}/edit`}>Edit</Link>
       <button onClick={()=>dispatch(deleteMeetAndGreet(sessionUser, meetAndGreet.id))}>Delete</button>

@@ -30,7 +30,7 @@ export const getMeetAndGreet = (meetAndGreetId) => (state) => {
 
 // THUNK ACTION CREATORS
 export const fetchMeetAndGreets = (user) => async (dispatch) => {
-  const res = await fetch(`/api/users/${user.id}/meetAndGreets`);
+  const res = await csrfFetch(`/api/users/${user.id}/meet_and_greets`);
   if (res.ok){
     const meetAndGreets = await res.json();
     dispatch(receiveMeetAndGreets(meetAndGreets));
@@ -38,7 +38,7 @@ export const fetchMeetAndGreets = (user) => async (dispatch) => {
 }
 
 export const fetchMeetAndGreet = (user, meetAndGreetId) => async (dispatch) => {
-  const res = await fetch(`/api/users/${user.id}/meetAndGreets/${meetAndGreetId}`);
+  const res = await fetch(`/api/users/${user.id}/meet_and_greets/${meetAndGreetId}`);
   if (res.ok) {
     const meetAndGreet = await res.json();
     dispatch(receiveMeetAndGreet(meetAndGreet));
@@ -57,7 +57,7 @@ export const createMeetAndGreet = (meetAndGreet) => async(dispatch) => {
 }
 
 export const updateMeetAndGreet = (user, meetAndGreet) => async (dispatch) => {
-  const res = await fetch(`/api/users/${user.id}/meetAndGreets/${meetAndGreet.id}`, {
+  const res = await fetch(`/api/users/${user.id}/meet_and_greets/${meetAndGreet.id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ export const updateMeetAndGreet = (user, meetAndGreet) => async (dispatch) => {
 }
 
 export const deleteMeetAndGreet = (user, meetAndGreetId) => async (dispatch) => {
-  const res = await fetch(`/api/users/${user.id}/meetAndGreets/${meetAndGreetId}`, {
+  const res = await fetch(`/api/users/${user.id}/meet_and_greets/${meetAndGreetId}`, {
     method: "DELETE"
   });
   if (res.ok) {
