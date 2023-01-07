@@ -9,8 +9,6 @@ const MeetAndGreetIndexItem = ({ meetAndGreet }) => {
   const sessionUser = useSelector(state => state.session.user);
   const animal = useSelector(getAnimal(meetAndGreet.animalId));
   
-  const [showEditForm, setShowEditForm] = useState(false);
-
   const dateConvert = (date) => {
     let splitDate = date.split("-");
     return splitDate[1] + "-" + splitDate[2] + "-" + splitDate[0];
@@ -28,13 +26,15 @@ const MeetAndGreetIndexItem = ({ meetAndGreet }) => {
 
 
   const editMeetAndGreet = (e) => {
-    if (showEditForm) return;
-    setShowEditForm(true);
+    const meetAndGreet = document.getElementsByClassName('meet-and-greet-inner-container');
+    meetAndGreet[0].style.display = "none";
+    const editForm = document.getElementsByClassName('MnG-edit-form-container');
+    editForm[0].style.display = "block";
   }
   
   return (
     <div className='meet-and-greet'>
-      {!showEditForm && (<div className='meet-and-greet-inner-container'>
+      <div className='meet-and-greet-inner-container'>
         <div className='meet-and-greet-top'>
           <div className='meet-and-greet-top-image'>
             {animal && (<img src={animal.photoUrl} alt="" />)}
@@ -53,10 +53,10 @@ const MeetAndGreetIndexItem = ({ meetAndGreet }) => {
           <button onClick={editMeetAndGreet}>Edit</button>
           <button onClick={()=>dispatch(deleteMeetAndGreet(sessionUser, meetAndGreet.id))}>Delete</button>
         </div>
-      </div>)}
-      {showEditForm && (
+      </div>
+      <div className='MnG-edit-form-container'>
         <MeetAndGreetEditForm meetAndGreetId={meetAndGreet.id} />
-      )}
+      </div>
     </div>
   )
 }
