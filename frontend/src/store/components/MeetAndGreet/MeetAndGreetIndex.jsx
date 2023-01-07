@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import MeetAndGreetIndexItem from './MeetAndGreetIndexItem';
 import { getMeetAndGreets, fetchMeetAndGreets } from '../../meetAndGreets';
+import './MnGIndex.css';
 
 const MeetAndGreetIndex = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,6 @@ const MeetAndGreetIndex = () => {
 
   return (
     <div className='meet-and-greets-container'>
-      {/* <h1 className='meet-and-greets-header'>My Meet & Greets</h1> */}
       {meetAndGreets.map(meetAndGreet => <MeetAndGreetIndexItem key={meetAndGreet.id} meetAndGreet={meetAndGreet} />)}
     </div>
   )

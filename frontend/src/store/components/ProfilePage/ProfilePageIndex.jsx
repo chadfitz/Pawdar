@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import MeetAndGreetIndex from '../MeetAndGreet/MeetAndGreetIndex';
 import './AboutMe.css';
-import './MeetAndGreetIndex.css';
 import './Favorites.css';
 import './Recommended.css';
 import './ProfilePage.css';

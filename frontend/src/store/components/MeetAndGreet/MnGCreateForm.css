@@ -1,0 +1,85 @@
+.form-header{
+  margin-bottom: 0px;
+  font-size: 35px;
+}
+
+.meet-and-greet-form label{
+  text-align: start;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.meet-and-greet-form input{
+  border: none;
+  outline: none;
+  outline: 1px solid #fff;
+  border: 1px solid var(--primary-color);
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.meet-and-greet-form input:hover{
+  cursor: text;
+  filter: brightness(95%);
+  transition: .5s;
+}
+
+.meet-and-greet-form input[type="time"]::-webkit-calendar-picker-indicator{
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.meet-and-greet-form input[type="date"]::-webkit-calendar-picker-indicator{
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.meet-and-greet-form input[type="time"]::-webkit-calendar-picker-indicator:hover{
+  cursor: pointer;
+  color: var(--primary-color);
+  transform: scale(1.35);
+  transition: .3s;
+}
+
+.meet-and-greet-form input[type="date"]::-webkit-calendar-picker-indicator:hover{
+  cursor: pointer;
+  color: var(--primary-color);
+  transform: scale(1.35);
+  transition: .3s;
+}
+
+.meet-and-greet-form input:valid{
+  border: 2px solid green;
+}
+
+.meet-and-greet-form-button{
+  width: 190px;
+  height: 45px;
+  margin-top: 15px;
+  border: 2px solid var(--primary-color);
+  background-color: #fff;
+  border-radius: 23px;
+  font-family: var(--primary-font);  
+  font-size: 18px;
+  font-weight: 1000;
+  font-weight: bolder;
+  letter-spacing: 1.3px; 
+  color: var(--primary-color);
+}
+
+.meet-and-greet-form-button:hover{
+  cursor: pointer;
+  border-color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: #fff;
+  transition: .3s;
+}
+
+
+.success-display{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

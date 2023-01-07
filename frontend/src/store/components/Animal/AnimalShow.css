@@ -22,7 +22,6 @@
 }
 
 .animal-show-container{
-  border: 1px solid red;
   margin-bottom: 40px;
   margin-top: 30px;
   padding-bottom: 30px;
@@ -98,14 +97,14 @@
 
 .animal-show-right{
   border: 1px solid blue;
-  width: 35%;
+  width: 303px;
   /* height: auto; */
 }
 
 .animal-show-upper-right{
-  width: 100%;
-  padding: 50px 30px;
-  height: 417px;
+  width: 303px;
+  padding: 20px 30px;
+  height: 310px;
   background-color: var(--primary-color);
   color: rgba(255, 255, 255, 0.95);
   border-radius: 20px;

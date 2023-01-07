@@ -1,41 +1,56 @@
 import { useState, useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMeetAndGreet, fetchMeetAndGreet, updateMeetAndGreet } from '../../meetAndGreets';
+import './MnGEdit.css';
 
 
 const MeetAndGreetEditForm = ({ meetAndGreetId }) => {
   const dispatch = useDispatch();
-  // const {meetAndGreetId} = useParams();
   let meetAndGreet = useSelector(getMeetAndGreet(meetAndGreetId));
   const sessionUser = useSelector(state => state.session.user);
 
   const [startTime, setStartTime] = useState(meetAndGreet.startTime);
   const [date, setDate] = useState(meetAndGreet.date);
-  // const [startTime, setStartTime] = useState("");
-  // const [date, setDate] = useState("");
+
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  const dateFormat = (dateObj) => {
+    let month = dateObj.getMonth() + 1;
+    let year = dateObj.getFullYear();
+    let date = dateObj.getDate();
+    if (date < 10) {
+        date = "0" + date;
+      }
+      if (month < 10) {
+        month = "0" + month;
+      }
+    return (`${year}-${month}-${date}`)
+  }
 
   useEffect(()=>{
     if (meetAndGreetId) dispatch(fetchMeetAndGreet(sessionUser, meetAndGreetId));
   }, [meetAndGreetId, sessionUser, dispatch])
 
+
   const handleSubmit = (e) => {
-    debugger;
     let newMeet = {startTime, date, id: meetAndGreetId}
     e.preventDefault();
     dispatch(updateMeetAndGreet(newMeet));
   }
 
   return(
-    <form onSubmit={handleSubmit}>
-      <h1>Edit Date & Time</h1>
+    <form className='MnG-edit-form' onSubmit={handleSubmit}>
+      <h1 className='MnG-edit-header'>Edit</h1>
       <label>Start Time between 9am and 5pm
-        <input type="time" min="9:00" max="17:00" value={startTime} onChange={(e)=>setStartTime(e.target.value)} required />
+        <input className='MnG-edit-time-input' type="time" min="09:00" max="17:00" step="900" value={startTime} onChange={(e)=>setStartTime(e.target.value)} required />
+        <span className="validity"></span>
       </label>
       <label>Date starting tomorrow
-        <input type="date" value={date} onChange={e=>setDate(e.target.value)} required />
+        <input className='MnG-edit-date-input' type="date" min={dateFormat(tomorrow)} value={date} onChange={e=>setDate(e.target.value)} required />
+        <span className="validity"></span>
       </label>
-      <button>Finish Edit</button>
+      <button className='MnG-edit-button'>Finish</button>
     </form>
   )
 }

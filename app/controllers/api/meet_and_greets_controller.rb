@@ -2,7 +2,6 @@ class Api::MeetAndGreetsController < ApplicationController
   before_action :require_logged_in
 
   def index
-    # debugger
     @meet_and_greets = current_user.meet_and_greets
     render :index
   end
@@ -16,7 +15,6 @@ class Api::MeetAndGreetsController < ApplicationController
   def update
     @meet_and_greet = current_user.meet_and_greets.find_by(id: params[:id])
     @meet_and_greet.user_id = current_user.id
-    debugger
     if @meet_and_greet.update(meet_and_greet_params)
       render :show
     else
