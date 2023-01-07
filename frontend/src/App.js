@@ -7,7 +7,7 @@ import AnimalIndex from "./store/components/Animal/AnimalIndex";
 import AnimalShow from "./store/components/Animal/AnimalShow";
 import ProfilePage from "./store/components/ProfilePage/ProfilePageIndex";
 // import MeetAndGreetIndex from "./store/components/MeetAndGreet/MeetAndGreetIndex";
-import MeetAndGreetShow from "./store/components/MeetAndGreet/MeetAndGreetShow";
+// import MeetAndGreetShow from "./store/components/MeetAndGreet/MeetAndGreetShow";
 
 function App() {
   return (
@@ -19,9 +19,9 @@ function App() {
             <AnimalIndex />
           </Route>
           <Route exact path="/user/profile" component={ProfilePage} />
-          {/* <Route exact path="/user/profile/meetAndGreets" component={MeetAndGreetIndex} /> */}
-          <Route exact path="/user/profile/meetAndGreets/:meetAndGreetId" component={MeetAndGreetShow} />
-          {/* <Route exact path="/user/profile/meetAndGreets/:meetAndGreetId/edit" component={MeetAndGreetEditForm} /> */}
+          {/* <Route exact path="/user/meetAndGreets" component={MeetAndGreetIndex} /> */}
+          {/* <Route exact path="/user/meetAndGreets/:meetAndGreetId" component={MeetAndGreetShow} /> */}
+          {/* <Route exact path="/user/meetAndGreets/:meetAndGreetId/edit" component={MeetAndGreetEditForm} /> */}
           <Route exact path="/animals/:animalId" component={AnimalShow} />
           <Route component={NotFound} />
         </Switch>

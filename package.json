@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "main": "index.js",
-  "engines":{
+  "engines": {
     "node": "16.x"
   },
   "directories": {
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/chadfitz/temporary-petfinder-clone-name/issues"
   },
-  "homepage": "https://github.com/chadfitz/temporary-petfinder-clone-name#readme"
+  "homepage": "https://github.com/chadfitz/temporary-petfinder-clone-name#readme",
+  "dependencies": {
+    "react-icons": "^4.7.1"
+  }
 }

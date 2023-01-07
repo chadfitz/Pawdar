@@ -49,3 +49,11 @@
   color: #fff;
   transition: .3s;
 }
+
+
+.success-display{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

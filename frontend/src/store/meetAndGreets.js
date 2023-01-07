@@ -56,14 +56,14 @@ export const createMeetAndGreet = (meetAndGreet) => async(dispatch) => {
   }
 }
 
-export const updateMeetAndGreet = (user, meetAndGreet) => async (dispatch) => {
-  const res = await fetch(`/api/users/${user.id}/meet_and_greets/${meetAndGreet.id}`, {
+export const updateMeetAndGreet = (meetAndGreet) => async (dispatch) => {
+  const res = await csrfFetch(`/api/meet_and_greets/${meetAndGreet.id}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     },
-    body: JSON.stringify(meetAndGreet)
+    body: JSON.stringify({ meetAndGreet })
   });
   if (res.ok){
     const newMeetAndGreet = await res.json();
@@ -72,7 +72,7 @@ export const updateMeetAndGreet = (user, meetAndGreet) => async (dispatch) => {
 }
 
 export const deleteMeetAndGreet = (user, meetAndGreetId) => async (dispatch) => {
-  const res = await fetch(`/api/users/${user.id}/meet_and_greets/${meetAndGreetId}`, {
+  const res = await csrfFetch(`/api/users/${user.id}/meet_and_greets/${meetAndGreetId}`, {
     method: "DELETE"
   });
   if (res.ok) {

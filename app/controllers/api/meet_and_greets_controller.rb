@@ -15,6 +15,8 @@ class Api::MeetAndGreetsController < ApplicationController
 
   def update
     @meet_and_greet = current_user.meet_and_greets.find_by(id: params[:id])
+    @meet_and_greet.user_id = current_user.id
+    debugger
     if @meet_and_greet.update(meet_and_greet_params)
       render :show
     else
@@ -25,7 +27,6 @@ class Api::MeetAndGreetsController < ApplicationController
   def destroy
     @meet_and_greet = current_user.meet_and_greets.find_by(id: params[:id])
     if @meet_and_greet&.delete
-      render :index
     else
       render json: { errors: ['Could not delete']}, status: 422
     end

@@ -85,11 +85,8 @@ const sessionReducer = (state = initialState, action) => {
 
     switch (action.type) { 
         case CREATE_SESSION:
-            // return {...newState, [action.payload.user.id]: action.payload.user}
             return {...newState, user: action.payload }
         case REMOVE_SESSION: 
-            // delete newState[action.userId];
-            // return newState;
             return {...state, user: null };
         default: 
             return state;

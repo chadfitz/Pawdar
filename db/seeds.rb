@@ -252,7 +252,7 @@ ApplicationRecord.transaction do
     color: "Red / Chestnut / Orange, White / Cream",
     coat: "Short",
     status: "Adoptable",
-    environment: "Good with children"
+    environment: "Good with children",
     organization_id: 4
   })
 

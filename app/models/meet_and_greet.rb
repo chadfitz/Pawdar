@@ -3,7 +3,7 @@
 # Table name: meet_and_greets
 #
 #  id         :bigint           not null, primary key
-#  start_time :time             not null
+#  start_time :string           not null
 #  date       :date             not null
 #  user_id    :bigint           not null
 #  animal_id  :bigint           not null

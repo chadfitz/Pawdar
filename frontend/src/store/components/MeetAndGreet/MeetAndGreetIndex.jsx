@@ -14,6 +14,7 @@ const MeetAndGreetIndex = () => {
 
   return (
     <div className='meet-and-greets-container'>
+      <div className='meet-and-greets-header'>Your Meet & Greets</div>
       {meetAndGreets.map(meetAndGreet => <MeetAndGreetIndexItem key={meetAndGreet.id} meetAndGreet={meetAndGreet} />)}
     </div>
   )
