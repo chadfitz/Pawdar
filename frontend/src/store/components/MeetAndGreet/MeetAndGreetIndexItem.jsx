@@ -23,15 +23,25 @@ const MeetAndGreetIndexItem = ({ meetAndGreet }) => {
   
   return (
     <div className='meet-and-greet'>
-      {animal && (<h1>Meeting with {animal.name}</h1>)}
-      <p>{meetAndGreet.date}</p>
-      <p>{meetAndGreet.startTime}</p>
-      {/* <NavLink to={`/user/meetAndGreets/${meetAndGreet.id}/edit`}>Edit</NavLink> */}
-      <button onClick={editMeetAndGreet}>Edit</button>
-      {showEditForm && (
-        <MeetAndGreetEditForm meetAndGreetId={meetAndGreet.id} />
-      )}
-      <button onClick={()=>dispatch(deleteMeetAndGreet(sessionUser, meetAndGreet.id))}>Delete</button>
+      <div className='meet-and-greet-top'>
+        <div className='meet-and-greet-left'>
+          {animal && (
+          <h1 className='meeting-header'>Meeting with {animal.name}</h1>
+          )}
+          <p>Date: {meetAndGreet.date}</p>
+          <p>{meetAndGreet.startTime}</p>
+        </div>
+        <div className='meet-and-greet-right'>
+          {animal && (<img src={animal.photoUrl} alt="" />)}
+        </div>
+      </div>
+      <div className='meet-and-greet-bottom'>
+        <button onClick={editMeetAndGreet}>Edit</button>
+        {showEditForm && (
+          <MeetAndGreetEditForm meetAndGreetId={meetAndGreet.id} />
+        )}
+        <button onClick={()=>dispatch(deleteMeetAndGreet(sessionUser, meetAndGreet.id))}>Delete</button>
+      </div>
     </div>
   )
 }

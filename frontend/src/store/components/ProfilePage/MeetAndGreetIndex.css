@@ -1,14 +1,94 @@
 .meet-and-greets-container{
-  border: 1px solid rgb(15, 225, 233);
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .meet-and-greet{
-  border: 1px solid silver;
-  width: 100%;
+  border: 1px solid var(--border-color);
+  border: 1px solid rgb(101 4 181 / 30%);
+  /* border: 1px solid var(--primary-color); */
+  width: 400px;
+  height: 250px;
+  border-radius: 15px;
+  padding: 30px 20px;
+  padding-bottom: 50px;
+  margin-top: 30px;
+  box-shadow: 5px 10px 8px rgb(77 71 81 / 30%);
+  box-shadow: 0px 5px 5px rgb(77 71 81 / 30%);
+  box-shadow: 0px 5px 5px rgb(101 4 181 / 30%);
+  /* box-shadow: 0px 5px 5px var(--primary-color); */
+  
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+/* 
+.meet-and-greets-header{
+  width: 100%;
+  text-align: left;
+  font-size: 25px;
+} */
+
+.meet-and-greet-top{
+  border: 1px solid red;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.meet-and-greet-left{
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+}
+
+.meeting-header{
+  font-size: 20px;
+}
+
+.meet-and-greet-right{
+  border: 1px solid purple;
+  height: 100%;
+}
+
+.meet-and-greet-right img{
+  object-fit: contain;
+  object-fit: cover;
+  width: 100%;
+  width: 125px;
+  height: 100%;
+  height: 165px;
+}
+
+.meet-and-greet-bottom{
+  border: 1px solid black;
+  width: 75%;
+  align-self: center;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.meet-and-greet-bottom button{
+  width: 30%;
+  height: 30px;
+  /* margin-top: 5px; */
+  border: 2px solid var(--primary-color);
+  background-color: var(--primary-color);
+  border-radius: 23px;
+  font-family: var(--primary-font);  
+  font-size: 18px;
+  font-weight: 100;
+  letter-spacing: 1.3px; 
+  color: #fff;
+}
+
+.meet-and-greet-bottom button:hover{
+  cursor: pointer;
+  border-color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: #fff;
+  transition: .3s;
 }

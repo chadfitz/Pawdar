@@ -3,7 +3,6 @@
 }
 
 .nav-bar{
-  /* border: 2px solid red; */
   width: 100vw;
   box-sizing: border-box;
   height: var(--height);
@@ -14,12 +13,12 @@
   letter-spacing: 1.3px;
   font-size: 17px;
   overflow: visible;
+  background-color: #fff;
   box-shadow: 0px 5px 5px rgb(77 71 81 / 30%);
   z-index: 1;
 }
 
 .region--inner{
-  /* border: 1px solid green; */
   height: 100%;
   display: flex;
   justify-content: space-between;

@@ -20,6 +20,7 @@ const MeetAndGreetCreateForm = () => {
     e.preventDefault();
     let meetAndGreet = {animalId, startTime, date};
     dispatch(createMeetAndGreet(meetAndGreet));
+    setShowForm(false);
   }
 
   const renderSuccess = () => {
@@ -31,13 +32,15 @@ const MeetAndGreetCreateForm = () => {
       {showForm && (
       <form onSubmit={handleSubmit} className='meet-and-greet-form'>
         <h1 className='form-header'>Meet & Greet</h1>
-        <label>Start Time between 9am and 5pm
+        <label className='time-container'>Start Time between 9am and 5pm
           <input min="09:00" max="17:00" type="time" step="900" value={startTime} onChange={(e)=>setStartTime(e.target.value)} required />
+          {/* <span class="validity"></span> */}
         </label>
         <label>Date starting tomorrow
           <input type="date" min={tomorrow} value={date} onChange={e=>setDate(e.target.value)} required />
         </label>
-        <button className='meet-and-greet-form-button' onClick={renderSuccess}>SCHEDULE</button>
+        {/* <button className='meet-and-greet-form-button' onClick={renderSuccess}>SCHEDULE</button> */}
+        <button className='meet-and-greet-form-button'>SCHEDULE</button>
       </form>
       )}
       {!showForm && (

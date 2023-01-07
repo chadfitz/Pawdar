@@ -57,3 +57,11 @@
   justify-content: center;
   align-items: center;
 }
+/* 
+input:invalid+span:after {
+  content: '✖';
+}
+
+input:valid+span:after {
+  content: '✓';
+} */
