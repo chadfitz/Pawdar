@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 import session from './session';
 import animalsReducer from './animals';
 import meetAndGreetsReducer from './meetAndGreets';
+import organizationsReducer from './organizations';
 
 const rootReducer = combineReducers ({
     session,
     animals: animalsReducer,
-    meetAndGreets: meetAndGreetsReducer
+    meetAndGreets: meetAndGreetsReducer,
+    organizations: organizationsReducer
 });
 
 let enhancer;
