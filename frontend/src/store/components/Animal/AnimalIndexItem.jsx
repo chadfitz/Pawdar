@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
-import './AnimalIndex.css';
+import './AnimalIndexItem.css';
 
 const AnimalIndexItem = ({ animal }) => {
-  // const dispatch = useDispatch();
 
   return (
     <Link to={`/animals/${animal.id}`} className="animal-link">

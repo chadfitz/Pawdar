@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AnimalIndexItem from './AnimalIndexItem';
 import { getAnimals, fetchAnimals } from '../../animals';
+import './AnimalIndex.css';
 
 const AnimalIndex = () => {
   const dispatch = useDispatch();

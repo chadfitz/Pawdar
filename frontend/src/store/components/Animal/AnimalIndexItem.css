@@ -1,0 +1,58 @@
+.animal-container{
+  margin-top: 20px;
+  margin-top: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 250px;
+  height: 350px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.animal-container:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: .3s;
+}
+
+.animal-container li{
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 5px 10px 8px rgb(77 71 81 / 30%);
+}
+
+.animal-container img{
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.animal-name{
+  position: relative;
+  width: 250px;
+  height: 60px;
+  bottom: 60px;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 16px 10px 22px;
+  border-radius: 0 0 20px 20px;
+  text-align: center;
+
+  font-size: 25px;
+  line-height: 15px;
+  font-weight: 400;
+}
+
+.animal-name::before{
+  background-color: #fff;
+  border-radius: 50% 50% 0 0;
+  bottom: calc(100% - 10px);
+  content: "";
+  display: block;
+  height: 30px;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
