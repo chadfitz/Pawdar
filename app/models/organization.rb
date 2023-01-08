@@ -10,6 +10,6 @@
 #
 class Organization < ApplicationRecord
   validates :name, :location, presence: true
-
+  
   has_many :animals
 end

@@ -47,7 +47,7 @@ const organizationsReducer = (state={}, action) => {
     case RECEIVE_ORGANIZATIONS:
       return {...newState, ...action.organizations};
     case RECEIVE_ORGANIZATION:
-      return {...newState, [action.organization.organization.id]: action.organization.organization};
+      return {...newState, [action.organization.id]: action.organization};
     default:
       return state;
   }
