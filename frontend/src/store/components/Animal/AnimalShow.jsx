@@ -14,9 +14,7 @@ const AnimalShow = () => {
     dispatch(fetchAnimal(animalId));
   }, [animalId, dispatch])
 
-  if (!animal){
-    return null;
-  }
+  if (!animal) return null;
 
   return(
     <div className='animal-show-window'>

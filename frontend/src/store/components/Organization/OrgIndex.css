@@ -1,0 +1,14 @@
+.org-index-container{
+  width: 100%;
+  height: 100%;
+  max-width: 1220px;
+  margin: 40px auto;
+  padding: 20px 50px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 5px rgb(77 71 81 / 30%);
+}
+
+.org-index-header{
+  margin-bottom: 10px;
+}

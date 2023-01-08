@@ -40,7 +40,7 @@ const Navigation = () => {
               <GiDogHouse size={40} />
             </NavLink>
           </div>
-          <div>BREEDS</div> {/* NavLink */}
+          <div><NavLink exact to="/organizations" className="nav-left-navlink">ORGANIZATIONS</NavLink></div>
           <div>RESOURCES</div> {/* NavLink */}
         </div>
         <div className='nav-right'>

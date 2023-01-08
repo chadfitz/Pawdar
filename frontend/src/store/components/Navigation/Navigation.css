@@ -44,6 +44,11 @@
   margin-right: 50px;
 }
 
+.nav-left-navlink{
+  text-decoration: none;
+  color: var(--font-color);
+}
+
 .nav-left div:hover{
   cursor: pointer;
   color: var(--primary-color);
