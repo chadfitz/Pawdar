@@ -1,7 +1,6 @@
 // ACTION CONSTANTS:
 export const RECEIVE_ANIMALS = 'animals/RECEIVE_ANIMALS';
 export const RECEIVE_ANIMAL = 'animals/RECEIVE_ANIMAL';
-export const REMOVE_ANIMAL = 'animals/REMOVE_ANIMAL';
 
 // ACTION CREATORS:
 export const receiveAnimals = (animals) => ({

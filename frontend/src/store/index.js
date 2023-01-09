@@ -4,12 +4,16 @@ import session from './session';
 import animalsReducer from './animals';
 import meetAndGreetsReducer from './meetAndGreets';
 import organizationsReducer from './organizations';
+import reviewsReducer from './reviews';
+import usersReducer from './user';
 
 const rootReducer = combineReducers ({
     session,
     animals: animalsReducer,
     meetAndGreets: meetAndGreetsReducer,
-    organizations: organizationsReducer
+    organizations: organizationsReducer,
+    reviews: reviewsReducer,
+    users: usersReducer
 });
 
 let enhancer;

@@ -26,6 +26,7 @@ class User < ApplicationRecord
   has_many :favorite_animals,
     through: :favorites,
     source: :animal
+  has_many :reviews
 
   def self.find_by_credentials(credential, password)
       if URI::MailTo::EMAIL_REGEXP.match(credential)

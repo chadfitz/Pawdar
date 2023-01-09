@@ -37,6 +37,7 @@
 .org-show-content-upper{
   width: 100%;
   border-bottom: 1px solid var(--border-color);
+  padding-bottom: 40px;
 }
 
 .org-show-content-upper h1{
@@ -51,6 +52,6 @@
 }
 
 .org-show-content-lower{
-  padding-top: 15px;
+  padding-top: 20px;
   width: 100%;
 }

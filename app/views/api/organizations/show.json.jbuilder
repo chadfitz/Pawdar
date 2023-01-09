@@ -7,5 +7,12 @@ json.set! :animals do
     end
   end
 end
+json.set! :reviews do
+  @organization.reviews.each do |review|
+    json.set! review.id do
+      json.extract! review, :id, :body, :user_id
+    end
+  end
+end
 
 # json.extract! @organization, :id, :name, :location, :animals
