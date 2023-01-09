@@ -6,8 +6,8 @@ import './Review.css';
 
 const Review = ({ review, organization }) => {
   const dispatch = useDispatch();
-  const user = useSelector(getUser(review.userId))
-  
+  // const user = useSelector(getUser(review.user.id))
+
   useEffect(()=>{
     dispatch(fetchReview(organization, review.id))
   }, [review.userId, dispatch])
@@ -15,9 +15,7 @@ const Review = ({ review, organization }) => {
   return(
     <div className='review-container'>
       <div className='review-user'>
-        {user && (
-        <li>{user.username}</li>
-        )}
+        <p>{review.user.username}</p>
       </div>
       <div className='rating'>
         {review.rating}

@@ -13,10 +13,15 @@ const ReviewCreateForm = () => {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
   const [body, setBody] = useState("");
+  const [errors, setErrors] = useState(false);
 
   const handleSubmit = e => {
-    // e.preventDefault();
+    e.preventDefault();
     let review = {rating, body, organizationId}
+    if (review.rating === null) {
+      setErrors(true);
+      return;
+    }
     if (sessionUser) {
       dispatch(createReview(review));
       setShowForm(false);
@@ -29,6 +34,7 @@ const ReviewCreateForm = () => {
         <form onSubmit={handleSubmit} className="review-create-form">
           <h2 className='review-create-form-header'>Rate your experience</h2>
           <div className='star-rating-container'>
+            {errors && (<div className='rating-errors'>Please enter a rating</div>)}
             {[...Array(5)].map((star, i) => {
               const ratingValue = i + 1;
               return (
