@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { createMeetAndGreet } from '../../meetAndGreets';
+import LoginFormModal from '../LoginFormModal';
 import './MnGCreateForm.css';
 
 const MeetAndGreetCreateForm = () => {
   const dispatch = useDispatch();
   const {animalId} = useParams();
+  const sessionUser = useSelector(state => state.session.user)
 
   const tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
@@ -14,12 +16,18 @@ const MeetAndGreetCreateForm = () => {
   const [showForm, setShowForm] = useState(true);
   const [startTime, setStartTime] = useState("");
   const [date, setDate] = useState("");
+  const [showLogin, setShowLogin] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     let meetAndGreet = {animalId, startTime, date};
-    dispatch(createMeetAndGreet(meetAndGreet));
-    setShowForm(false);
+    if (sessionUser) {
+      dispatch(createMeetAndGreet(meetAndGreet));
+      setShowForm(false);
+      setShowLogin(false);
+    } else {
+      setShowLogin(true);
+    }
   }
 
   const dateFormat = (dateObj) => {
@@ -50,6 +58,14 @@ const MeetAndGreetCreateForm = () => {
         </label>
         <button className='meet-and-greet-form-button'>SCHEDULE</button>
       </form>
+      )}
+      {showLogin && (
+        <div className='login-container'>
+          <p>Please Log In</p>
+          {/* <div className='login-button-container'>
+            <LoginFormModal />
+          </div> */}
+        </div>
       )}
       {!showForm && (
         <div className='success-display'>

@@ -19,7 +19,7 @@ const AnimalShow = () => {
   return(
     <div className='animal-show-window'>
       <div className='animal-image-container'>
-        <img src={animal.photoUrl} alt="" />
+        {/* <img src={animal.photoUrl} alt="" /> */}
       </div>
       <div className='animal-show-container'>
         <div className='animal-show-left'>

@@ -24,7 +24,6 @@
 
 .org-show-header{
   width: 100%;
-  /* text-align: left; */
   margin-bottom: 10px;
 }
 
@@ -54,4 +53,13 @@
 .org-show-content-lower{
   padding-top: 20px;
   width: 100%;
+}
+
+.star-rating-container{
+  /* border: 1px solid red; */
+  display: flex;
+}
+
+.radio-input{
+  display: none;
 }

@@ -37,10 +37,10 @@ const MeetAndGreetEditForm = ({ meetAndGreetId }) => {
     let newMeet = {startTime, date, id: meetAndGreetId}
     e.preventDefault();
     dispatch(updateMeetAndGreet(newMeet));
-    const editForm = document.getElementsByClassName('MnG-edit-form-container');
-    editForm[0].style.display = "none";
-    const meetAndGreet = document.getElementsByClassName('meet-and-greet-inner-container');
-    meetAndGreet[0].style.display = "flex";
+    // const editForm = document.getElementsByClassName('MnG-edit-form-container');
+    // editForm[0].style.display = "none";
+    // const meetAndGreet = document.getElementsByClassName('meet-and-greet-inner-container');
+    // meetAndGreet[0].style.display = "flex";
   }
 
   return(

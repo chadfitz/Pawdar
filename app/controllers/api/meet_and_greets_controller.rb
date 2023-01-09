@@ -10,7 +10,16 @@ class Api::MeetAndGreetsController < ApplicationController
     @meet_and_greet = current_user.meet_and_greets.find_by(id: params[:id])
     render :show
   end
-
+  
+  def create
+    @meet_and_greet = MeetAndGreet.new(meet_and_greet_params)
+    @meet_and_greet.user_id = current_user.id
+    if @meet_and_greet && @meet_and_greet.save!
+      render :show
+    else
+      render json: { errors: @meet_and_greet.errors.full_messages }, status: 422
+    end
+  end
 
   def update
     @meet_and_greet = current_user.meet_and_greets.find_by(id: params[:id])
@@ -27,16 +36,6 @@ class Api::MeetAndGreetsController < ApplicationController
     if @meet_and_greet&.delete
     else
       render json: { errors: ['Could not delete']}, status: 422
-    end
-  end
-  
-  def create
-    @meet_and_greet = MeetAndGreet.new(meet_and_greet_params)
-    @meet_and_greet.user_id = current_user.id
-    if @meet_and_greet && @meet_and_greet.save!
-      render :show
-    else
-      render json: { errors: @meet_and_greet.errors.full_messages }, status: 422
     end
   end
 

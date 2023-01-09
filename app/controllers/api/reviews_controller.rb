@@ -2,16 +2,26 @@ class Api::ReviewsController < ApplicationController
   before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def index
-    # how to find by organization id and not current user
-    # @reviews = @organization.reviews.find_by(id: params[:id])
+    # debugger
     @reviews = Review.all
     render :index
   end
 
   def show
-    # @review = @organization.reviews.find_by(id: params[:id])
+    # debugger
     @review = Review.find_by(id: params[:id])
     render :show
+  end
+
+  def create
+    # debugger
+    @review = Review.new(review_params)
+    @review.user_id = current_user.id
+    if @review&.save!
+      render :show
+    else
+      render json: { errors: @review.errors.full_messages }, status: 422
+    end
   end
 
   def update
@@ -34,6 +44,6 @@ class Api::ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:body, :organization_id)
+    params.require(:review).permit(:rating, :body, :organization_id)
   end
 end
