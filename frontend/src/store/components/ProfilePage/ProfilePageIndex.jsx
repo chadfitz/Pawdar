@@ -4,12 +4,14 @@ import './AboutMe.css';
 import './Favorites.css';
 import './Recommended.css';
 import './ProfilePage.css';
+import { useSelector } from 'react-redux';
 
 const ProfilePage = () => {
+  const sessionUser = useSelector(state => state.session.user)
+
   const [showAboutMe, setShowAboutMe] = useState(true); 
   const [showMeetAndGreets, setShowMeetAndGreets] = useState(false);
   const [showFavorites, setShowFavorites] = useState(false);
-  const [showRecommended, setShowRecommended] = useState(false);
   
   const openAboutMe = e => {
     if (showAboutMe) return;
@@ -20,7 +22,6 @@ const ProfilePage = () => {
     e.currentTarget.classList.add('open-tab');
     setShowMeetAndGreets(false);
     setShowFavorites(false);
-    setShowRecommended(false);
   }
 
   const openMeetAndGreets = e => {
@@ -32,7 +33,6 @@ const ProfilePage = () => {
     setShowMeetAndGreets(true);
     e.currentTarget.classList.add('open-tab');
     setShowFavorites(false);
-    setShowRecommended(false);
   }
 
   const openFavorites = e => {
@@ -44,22 +44,7 @@ const ProfilePage = () => {
     setShowMeetAndGreets(false);
     setShowFavorites(true);
     e.currentTarget.classList.add('open-tab');
-    setShowRecommended(false);
   }
-
-  const openRecommended = e => {
-    if (showRecommended) return;
-    const tab = document.getElementsByClassName('open-tab');
-    tab[0].classList.remove('open-tab');
-
-    
-    setShowAboutMe(false);
-    setShowMeetAndGreets(false);
-    setShowFavorites(false);
-    setShowRecommended(true);
-    e.currentTarget.classList.add('open-tab');
-  }
-
 
   return (
     <div role="main" className='main'>
@@ -71,13 +56,21 @@ const ProfilePage = () => {
               <li className='about-me-tab open-tab' onClick={openAboutMe}>About Me</li>
                 <li className='meet-and-greets-tab' onClick={openMeetAndGreets}>Meet & Greets</li>
               <li className='favorites-tab' onClick={openFavorites}>Favorites</li>
-              <li className='recommended-tab' onClick={openRecommended}>Recommended</li>
             </ul>
           </div>
           <div className='profile-body'>
             <div className='about-me-content'>
               {showAboutMe && (
-                <p>About Me Test</p>
+                <>
+                  <div className='about-me-key-container'>
+                    <p className='about-me-key'>Username:&nbsp;</p>
+                    <p className='about-me-username'>{sessionUser.username}</p>
+                  </div>
+                  <div className='about-me-key-container'>
+                    <p className='about-me-key'>Email:&nbsp;</p>
+                    <p className='about-me-email'>{sessionUser.email}</p>
+                  </div>
+                </>
               )}
             </div>
             <div className='meet-and-greet-index'>
@@ -88,11 +81,6 @@ const ProfilePage = () => {
             <div className='favorites-content'>
               {showFavorites && (
                 <p>Favorites Test</p>
-              )}
-            </div>
-            <div className='recommended-content'>
-              {showRecommended && (
-                <p>Recommended Test</p>
               )}
             </div>
           </div>
