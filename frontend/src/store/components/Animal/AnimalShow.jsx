@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAnimal, fetchAnimal } from '../../animals';
 import MeetAndGreetCreateForm from '../MeetAndGreet/MeetAndGreetCreateForm'
@@ -59,7 +59,7 @@ const AnimalShow = () => {
             {(organization) && (
               <div className='animal-show-org-content'>
                 <h1 className='animal-show-org-header'>{animal.name} is a member of:</h1>
-                <Link to={`organizations/${organization.id}`} className='animal-show-org-name'>{organization.name}</Link>
+                <NavLink exact to={`/organizations/${organization.id}`} className='animal-show-org-name'>{organization.name}</NavLink>
                 <p className='animal-show-org-location'>Located at {organization.location}</p>
               </div>
             )}
