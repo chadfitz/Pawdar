@@ -14,7 +14,7 @@ class Api::MeetAndGreetsController < ApplicationController
   def create
     @meet_and_greet = MeetAndGreet.new(meet_and_greet_params)
     @meet_and_greet.user_id = current_user.id
-    if @meet_and_greet && @meet_and_greet.save!
+    if @meet_and_greet&.save!
       render :show
     else
       render json: { errors: @meet_and_greet.errors.full_messages }, status: 422

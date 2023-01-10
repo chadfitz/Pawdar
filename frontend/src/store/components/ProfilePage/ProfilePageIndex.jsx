@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import MeetAndGreetIndex from '../MeetAndGreet/MeetAndGreetIndex';
+import FavoriteIndex from '../Favorite/FavoriteIndex';
 import './AboutMe.css';
 import './Favorites.css';
 import './Recommended.css';
 import './ProfilePage.css';
-import { useSelector } from 'react-redux';
 
 const ProfilePage = () => {
   const sessionUser = useSelector(state => state.session.user)
@@ -80,7 +81,7 @@ const ProfilePage = () => {
             </div>
             <div className='favorites-content'>
               {showFavorites && (
-                <p>Favorites Test</p>
+                <FavoriteIndex />
               )}
             </div>
           </div>

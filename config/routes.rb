@@ -8,13 +8,15 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :create] do
       resources :meet_and_greets, only: [:index, :show, :destroy]
       resources :reviews, only: :destroy
+      resources :favorites, only: [:index, :show, :destroy]
     end
-    resources :meet_and_greets, only: [:create, :update]
-    resources :reviews, only: [:create, :update]
     resources :organizations, only: [:index, :show] do
       resources :reviews, only: [:index, :show]
     end
     resources :animals, only: [:index, :show]
+    resources :meet_and_greets, only: [:create, :update]
+    resources :reviews, only: [:create, :update]
+    resources :favorites, only: :create
     resource :session, only: [:show, :create, :destroy]
   end
 

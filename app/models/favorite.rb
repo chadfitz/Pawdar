@@ -9,4 +9,6 @@
 #  updated_at :datetime         not null
 #
 class Favorite < ApplicationRecord
+  belongs_to :user
+  belongs_to :animal
 end

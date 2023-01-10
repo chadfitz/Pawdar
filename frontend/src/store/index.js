@@ -6,6 +6,7 @@ import meetAndGreetsReducer from './meetAndGreets';
 import organizationsReducer from './organizations';
 import reviewsReducer from './reviews';
 import usersReducer from './user';
+import favoritesReducer from './favorites';
 
 const rootReducer = combineReducers ({
     session,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers ({
     meetAndGreets: meetAndGreetsReducer,
     organizations: organizationsReducer,
     reviews: reviewsReducer,
-    users: usersReducer
+    users: usersReducer,
+    favorites: favoritesReducer
 });
 
 let enhancer;
