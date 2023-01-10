@@ -4,7 +4,7 @@ import { getMeetAndGreet, fetchMeetAndGreet, updateMeetAndGreet } from '../../me
 import './MnGEdit.css';
 
 
-const MeetAndGreetEditForm = ({ meetAndGreetId }) => {
+const MeetAndGreetEditForm = ({ meetAndGreetId, setEdit }) => {
   const dispatch = useDispatch();
   let meetAndGreet = useSelector(getMeetAndGreet(meetAndGreetId));
   const sessionUser = useSelector(state => state.session.user);
@@ -37,10 +37,7 @@ const MeetAndGreetEditForm = ({ meetAndGreetId }) => {
     let newMeet = {startTime, date, id: meetAndGreetId}
     e.preventDefault();
     dispatch(updateMeetAndGreet(newMeet));
-    // const editForm = document.getElementsByClassName('MnG-edit-form-container');
-    // editForm[0].style.display = "none";
-    // const meetAndGreet = document.getElementsByClassName('meet-and-greet-inner-container');
-    // meetAndGreet[0].style.display = "flex";
+    setEdit(false);
   }
 
   return(

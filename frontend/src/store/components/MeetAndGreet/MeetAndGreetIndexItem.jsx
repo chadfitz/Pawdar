@@ -26,58 +26,11 @@ const MeetAndGreetIndexItem = ({ meetAndGreet }) => {
   useEffect(() => {
     dispatch(fetchAnimal(meetAndGreet.animalId));
   }, [meetAndGreet.animalId, dispatch])
-
-
-  const editMeetAndGreet = (e) => {
-    setEdit(true);
-    // const meetAndGreetContainer = document.getElementsByClassName('meet-and-greet-inner-container');
-    // const meetAndGreetContainer = document.getElementsByClassName(`inner-id-${meetAndGreet.id}`);
-    // meetAndGreetContainer[0].style.display = "none";
-    // const editForm = document.getElementsByClassName('MnG-edit-form-container');
-    // editForm[0].style.display = "flex";
-  }
-
-  // const handleForm = () => {
-  //   if (!edit) {
-  //     return (
-  //     <div className={`meet-and-greet id-${meetAndGreet.id}`}>
-  //     <div className={`meet-and-greet-inner-container inner-id-${meetAndGreet.id}`}>
-  //       <div className='meet-and-greet-top'>
-  //         <div className='meet-and-greet-top-image'>
-  //           {/* {animal && (<img src={animal.photoUrl} alt="" />)} */}
-  //         </div>
-  //         {animal && (
-  //         <h1 className='meeting-header'>Meeting with<br/>
-  //           {animal.name}
-  //         </h1>
-  //         )}
-  //         <div className='meeting-details'>
-  //           <p>Date: {dateConvert(meetAndGreet.date)}</p>
-  //           <p>Time: {timeConvert(meetAndGreet.startTime)}</p>
-  //         </div>
-  //       </div>
-  //       <div className='meet-and-greet-bottom'>
-  //         <button onClick={()=>setEdit(true)}>Edit</button>
-  //         <button onClick={()=>dispatch(deleteMeetAndGreet(sessionUser, meetAndGreet.id))}>Delete</button>
-  //       </div>
-  //     </div>
-  //   </div>
-  //   )} else {
-  //     return (
-  //     <div className='MnG-edit-form-container'>
-  //       <MeetAndGreetEditForm meetAndGreetId={meetAndGreet.id} meetAndGreetTest={meetAndGreet} />
-  //     </div>
-  //     )
-  //   }
-  // }
   
   return (
-    // <>
-    //   {handleForm()}
-    // </>
-    <div className={`meet-and-greet id-${meetAndGreet.id}`}>
+    <div className='meet-and-greet'>
       {!edit && (
-      <div className={`meet-and-greet-inner-container inner-id-${meetAndGreet.id}`}>
+      <div className='meet-and-greet-inner-container'>
         <div className='meet-and-greet-top'>
           <div className='meet-and-greet-top-image'>
             {/* {animal && (<img src={animal.photoUrl} alt="" />)} */}
@@ -93,14 +46,14 @@ const MeetAndGreetIndexItem = ({ meetAndGreet }) => {
           </div>
         </div>
         <div className='meet-and-greet-bottom'>
-          <button onClick={editMeetAndGreet}>Edit</button>
+          <button onClick={()=>setEdit(true)}>Edit</button>
           <button onClick={()=>dispatch(deleteMeetAndGreet(sessionUser, meetAndGreet.id))}>Delete</button>
         </div>
       </div>
       )}
       {edit && (
       <div className='MnG-edit-form-container'>
-        <MeetAndGreetEditForm meetAndGreetId={meetAndGreet.id} />
+        <MeetAndGreetEditForm meetAndGreetId={meetAndGreet.id} setEdit={setEdit} />
       </div>
       )}
     </div>
