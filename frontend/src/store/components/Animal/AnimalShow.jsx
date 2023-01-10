@@ -1,21 +1,27 @@
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAnimal, fetchAnimal } from '../../animals';
 import MeetAndGreetCreateForm from '../MeetAndGreet/MeetAndGreetCreateForm'
 import './AnimalShow.css';
+import { getOrganization, fetchOrganization } from '../../organizations';
 
 const AnimalShow = () => {
   const {animalId} = useParams();
   const dispatch = useDispatch();
   const animal = useSelector(getAnimal(animalId));
-
+  const organization = useSelector(getOrganization(animal?.organizationId))
+  
   useEffect(()=>{
     dispatch(fetchAnimal(animalId));
   }, [animalId, dispatch])
-
+  
+  useEffect(()=>{
+    if (animal) dispatch(fetchOrganization(animal.organizationId));
+  }, [animal, dispatch])
+  
   if (!animal) return null;
-
+  
   return(
     <div className='animal-show-window'>
       <div className='animal-image-container'>
@@ -48,6 +54,15 @@ const AnimalShow = () => {
         <div className='animal-show-right'>
           <div className='animal-show-upper-right'>
             <MeetAndGreetCreateForm />
+          </div>
+          <div className='animal-show-lower-right'>
+            {(organization) && (
+              <div className='animal-show-org-content'>
+                <h1 className='animal-show-org-header'>{animal.name} is a member of:</h1>
+                <Link to={`organizations/${organization.id}`} className='animal-show-org-name'>{organization.name}</Link>
+                <p className='animal-show-org-location'>Located at {organization.location}</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

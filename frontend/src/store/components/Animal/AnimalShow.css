@@ -95,18 +95,53 @@
 }
 
 .animal-show-right{
-  border: 1px solid blue;
   width: 303px;
-  /* height: auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .animal-show-upper-right{
   width: 303px;
-  padding: 20px 30px;
   height: 310px;
-  height: auto;
+  padding: 20px 30px;
   background-color: var(--primary-color);
   color: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
   text-align: center;
+}
+
+.animal-show-lower-right{
+  width: 303px;
+  height: 200px;
+  height: auto;
+  padding: 20px 30px;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.animal-show-org-content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.animal-show-org-header{
+  font-size: 20px;
+}
+
+.animal-show-org-name{
+  font-size: 25px;
+  padding-bottom: 15px;
+  text-decoration: none;
+  color: var(--font-color);
+  color: var(--primary-color);
+}
+
+.animal-show-org-name:hover{
+  transform: scale(1.2);
+  transition: 0.3s;
 }
