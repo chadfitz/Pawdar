@@ -1,3 +1,50 @@
-.rating{
-  /* border: 1px solid blue; */
+.review-container{
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0px 5px 5px rgb(77 71 81 / 30%);
+  padding: 20px 40px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review-user-and-rating{
+  font-size: 22px;
+  padding-bottom: 20px;
+  display: flex;
+}
+
+.star{
+  color: var(--primary-color);
+}
+
+.review-buttons-container{
+  /* border: 1px solid red; */
+  width: 220px;
+  padding-top: 30px;
+  align-self: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-buttons-container button{
+  width: 100px;
+  height: 30px;
+  border: 2px solid var(--primary-color);
+  background-color: var(--primary-color);
+  border-radius: 23px;
+  font-family: var(--primary-font);  
+  font-size: 15px;
+  font-weight: 100;
+  letter-spacing: 1.3px; 
+  color: #fff;
+}
+
+.review-buttons-container button:hover{
+  cursor: pointer;
+  border-color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: #fff;
+  transition: .3s;
 }

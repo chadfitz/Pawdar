@@ -3,7 +3,8 @@ class Api::ReviewsController < ApplicationController
 
   def index
     # debugger
-    @reviews = Review.all
+    # @reviews = Review.all
+    @reviews = Review.where(organization_id: params[:organization_id])
     render :index
   end
 

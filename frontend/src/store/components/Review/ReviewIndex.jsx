@@ -7,14 +7,14 @@ import './ReviewIndex.css';
 const ReviewIndex = ({ organization }) => {
   const dispatch = useDispatch();
   const reviews = useSelector(getReviews);
-  const sessionUser = useSelector(state => state.session.user)
 
   useEffect(()=>{
     dispatch(fetchReviews(organization))
-  }, [dispatch])
+  }, [organization, dispatch])
 
   return (
-    <ul>{reviews.map(review => <Review key={review.id} review={review} organization={organization} />)}
+    <ul>
+      {reviews.map(review => <Review key={review.id} review={review} organization={organization} />)}
     </ul>
 
   )

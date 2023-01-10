@@ -19,8 +19,8 @@ const MeetAndGreetIndexItem = ({ meetAndGreet }) => {
   const timeConvert = (startTime) => {
     let splitTime = startTime.split(":");
     if (splitTime[0] < 12) return startTime + " AM";
-    if (splitTime[0] === 12) return startTime + " PM";
-    return splitTime[0]-12 + ":" + splitTime[1] + " PM";
+    if (splitTime[0] > 12) return splitTime[0]-12 + ":" + splitTime[1] + " PM";
+    return startTime + " PM";
   }
 
   useEffect(() => {

@@ -1,0 +1,58 @@
+.review-create-form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-create-form-errors{
+  color: red;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.review-create-form-header{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.star-rating-container{
+  display: flex;
+  font-size: 50px;
+}
+
+.star-rating-container label{
+  margin-bottom: 0;
+}
+
+.radio-input{
+  display: none;
+}
+
+.star:hover{
+  cursor: pointer;
+}
+
+.review-create-form-body{
+  width: 340px;
+}
+
+.review-create-form-button{
+  font-family: var(--primary-font);  
+  font-weight: 500;
+  letter-spacing: 1.3px; 
+  width: 135px;
+  height: 45px;
+  margin-top: 20px;
+  border: 2px solid var(--primary-color);
+  background-color: var(--primary-color);
+  border-radius: 23px;
+  color: #fff;
+}
+
+.review-create-form-button:hover{
+  cursor: pointer;
+  border-color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: #fff;
+  transition: .3s;
+}

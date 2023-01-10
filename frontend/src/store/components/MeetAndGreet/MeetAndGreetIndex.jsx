@@ -9,6 +9,8 @@ const MeetAndGreetIndex = () => {
   const meetAndGreets = useSelector(getMeetAndGreets);
   const sessionUser = useSelector(state => state.session.user);
 
+  meetAndGreets.sort((a, b)=> (a.date > b.date) ? 1: -1 )
+
   useEffect(()=>{
     dispatch(fetchMeetAndGreets(sessionUser));
   }, [dispatch, sessionUser])

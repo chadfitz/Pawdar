@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchOrganization, getOrganization } from "../../organizations";
 import AnimalIndexItem from "../Animal/AnimalIndexItem";
-import Review from "../Review/Review";
 import ReviewCreateForm from "../Review/ReviewCreateForm";
 import ReviewIndex from "../Review/ReviewIndex";
 import './OrgShow.css';
@@ -35,13 +34,12 @@ const OrganizationShow = () => {
           )}
         </div>
         <div className="org-show-content-lower">
-          <h1>Reviews go here</h1>
+          <h1 className="org-show-reviews-header">Review {organization.name}</h1>
           <div className="create-review-container">
             <ReviewCreateForm />
           </div>
           {organization.reviews && (
             <div className="org-show-reviews-container">
-              {/* <ul>{Object.values(organization.reviews).map(review => <Review key={review.id} review={review} />)}</ul> */}
               <ReviewIndex organization={organization} />
             </div>
           )}

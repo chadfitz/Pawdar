@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createMeetAndGreet } from '../../meetAndGreets';
-import LoginFormModal from '../LoginFormModal';
+// import LoginFormModal from '../LoginFormModal';
 import './MnGCreateForm.css';
 
 const MeetAndGreetCreateForm = () => {

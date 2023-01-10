@@ -41,7 +41,6 @@ const Navigation = () => {
             </NavLink>
           </div>
           <div><NavLink exact to="/organizations" className="nav-left-navlink">ORGANIZATIONS</NavLink></div>
-          <div>RESOURCES</div> {/* NavLink */}
         </div>
         <div className='nav-right'>
           <div className='nav-favorite'>

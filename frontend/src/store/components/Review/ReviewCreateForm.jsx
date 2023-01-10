@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { createReview } from '../../reviews';
 import { FaStar } from 'react-icons/fa';
+import './ReviewCreateForm.css';
 
 const ReviewCreateForm = () => {
   const dispatch = useDispatch();
@@ -33,8 +34,8 @@ const ReviewCreateForm = () => {
       {showForm && (
         <form onSubmit={handleSubmit} className="review-create-form">
           <h2 className='review-create-form-header'>Rate your experience</h2>
+          {errors && (<div className='review-create-form-errors'>Please enter a rating</div>)}
           <div className='star-rating-container'>
-            {errors && (<div className='rating-errors'>Please enter a rating</div>)}
             {[...Array(5)].map((star, i) => {
               const ratingValue = i + 1;
               return (
@@ -45,11 +46,10 @@ const ReviewCreateForm = () => {
                     name="rating" 
                     value={ratingValue} 
                     onClick={()=>setRating(ratingValue)}
-                    // required
                   />
                   <FaStar className='star' 
                     key={i+2}
-                    color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
+                    color={ratingValue <= (hover || rating) ? "var(--primary-color)" : "var(--text-color)"}
                     onMouseEnter={()=>setHover(ratingValue)}
                     onMouseLeave={()=>setHover(null)}
                   />
@@ -57,8 +57,8 @@ const ReviewCreateForm = () => {
               );
             })}
           </div>
-          <h2>Describe your experience</h2>
-          <textarea className='review-create-form-body' cols="30" rows="10" onChange={e=>setBody(e.target.value)}></textarea>
+          <h2 className='review-create-form-header'>Describe your experience</h2>
+          <textarea className='review-create-form-body' rows='10' onChange={e=>setBody(e.target.value)}></textarea>
           <button className='review-create-form-button'>REVIEW</button>
         </form>
       )}

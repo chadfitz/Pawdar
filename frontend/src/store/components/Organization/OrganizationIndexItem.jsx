@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import './Org.css';
 
-const Organization = ({ organization }) => {
+const OrganizationIndexItem = ({ organization }) => {
 
   return(
     <NavLink to={`/organizations/${organization.id}`} className='org-link'>
@@ -13,4 +13,4 @@ const Organization = ({ organization }) => {
   )
 }
 
-export default Organization;
+export default OrganizationIndexItem;

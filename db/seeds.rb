@@ -11,6 +11,10 @@ ApplicationRecord.transaction do
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
   User.destroy_all
+  Organization.destroy_all
+  Animal.destroy_all
+  MeetAndGreet.destroy_all
+  Review.destroy_all
 
   puts "Resetting primary keys..."
   # For easy testing, so that after seeding, the first `User` has `id` of 1
@@ -20,11 +24,71 @@ ApplicationRecord.transaction do
   ApplicationRecord.connection.reset_pk_sequence!('favorites')
 
   puts "Creating users..."
-  # Create one user with an easy to remember username, email, and password:
+  #1
   User.create!(
     username: 'Demo-lition', 
     email: 'demo@user.io', 
     password: 'password'
+  )
+  #2
+  User.create!(
+    username: 'CatQueen', 
+    email: 'cats@gmail.com', 
+    password: '123456'
+  )
+  #3
+  User.create!(
+    username: 'Dog-Dude', 
+    email: 'dogs@gmail.com', 
+    password: 'Doggies'
+  )
+  #4
+  User.create!(
+    username: 'PuppyPower', 
+    email: 'pups@gmail.com', 
+    password: 'Puppies'
+  )
+  #5
+  User.create!(
+    username: 'Kitty-Kat', 
+    email: 'kits@gmail.com', 
+    password: 'Kitties'
+  )
+  #6
+  User.create!(
+    username: 'BoopTheSnoot', 
+    email: 'boop@gmail.com', 
+    password: 'Boopman64'
+  )
+  #7
+  User.create!(
+    username: 'Cat-Dad', 
+    email: 'catdad@gmail.com', 
+    password: 'cat123'
+  )
+  #8
+  User.create!(
+    username: 'MeowMeow', 
+    email: 'meow@gmail.com', 
+    password: 'meowmeow'
+  )
+  #9
+  User.create!(
+    username: 'DoggyDaycare', 
+    email: 'ddc@gmail.com', 
+    password: 'FloridaMan'
+  )
+  #10
+  User.create!(
+    username: 'Clifford', 
+    email: 'clifford@gmail.com', 
+    password: 'clifford'
+  )
+  #11
+  User.create!(
+    username: 'Steve', 
+    email: 'steveuser@gmail.com', 
+    password: 'password123'
   )
 
   puts "Creating organizations..."
@@ -495,5 +559,135 @@ ApplicationRecord.transaction do
   dog_15.photo.attach(io: URI.open("https://pawdar-dev.s3.us-west-1.amazonaws.com/dog_15_nova.jpg"), filename: "dog_15_nova.jpg")
   dog_16.photo.attach(io: URI.open("https://pawdar-dev.s3.us-west-1.amazonaws.com/dog_16_pickle.jpg"), filename: "dog_16_pickle.jpg")
   dog_17.photo.attach(io: URI.open("https://pawdar-dev.s3.us-west-1.amazonaws.com/dog_17_bana.jpg"), filename: "dog_17_bana.jpg")
+
+  puts "Creating Meet & Greets..."
+  MeetAndGreet.create!({
+    start_time: "9:30",
+    date: Date.new(2023, 1, 28),
+    user_id: 1,
+    animal_id: 25,
+  })
+
+  MeetAndGreet.create!({
+    start_time: "14:45",
+    date: Date.new(2023, 3, 21),
+    user_id: 1,
+    animal_id: 2,
+  })
+
+  MeetAndGreet.create!({
+    start_time: "12:00",
+    date: Date.new(2023, 4, 1),
+    user_id: 1,
+    animal_id: 3,
+  })
+
+  MeetAndGreet.create!({
+    start_time: "16:15",
+    date: Date.new(2023, 5, 15),
+    user_id: 1,
+    animal_id: 27,
+  })
+
+  puts "Creating Reviews..."
+  #1
+  Review.create!({
+    rating: 5,  
+    body: "All of the cats are so cute!",
+    user_id: 2,
+    organization_id: 1,
+  })
+
+  Review.create!({
+    rating: 4,  
+    body: "My wife and I went 'just to have a look'. We now own 3 cats.",
+    user_id: 5,
+    organization_id: 1,
+  })
+  
+  Review.create!({
+    rating: 5,  
+    body: "The receptionist was very helpful. I wish I remember her name!",
+    user_id: 7,
+    organization_id: 2,
+  })
+  
+  Review.create!({
+    rating: 5,  
+    body: "Proud new owner of the cutest cat in the world!",
+    user_id: 8,
+    organization_id: 2,
+  })
+  #5
+  Review.create!({
+    rating: 5,  
+    body: "Found the best cat here!",
+    user_id: 2,
+    organization_id: 3,
+  })
+  
+  Review.create!({
+    rating: 5,  
+    body: "Created my username because of this place!",
+    user_id: 7,
+    organization_id: 3,
+  })
+  
+  Review.create!({
+    rating: 5,  
+    body: "I volunteer here all the time, everyone is super nice!",
+    user_id: 6,
+    organization_id: 4,
+  })
+    
+  Review.create!({
+    rating: 5,  
+    body: "It's too hard to choose one! So I got 5",
+    user_id: 1,
+    organization_id: 4,
+  })
+
+  Review.create!({
+    rating: 5,  
+    body: "Guess who found a new best friend?",
+    user_id: 3,
+    organization_id: 5,
+  })
+  #10
+  Review.create!({
+    rating: 4,  
+    body: "Didn't find what I was looking for but it was a very pleasant experience",
+    user_id: 4,
+    organization_id: 5,
+  })
+
+  Review.create!({
+    rating: 5,  
+    body: "So many good boys",
+    user_id: 9,
+    organization_id: 6,
+  })
+
+  Review.create!({
+    rating: 5,  
+    body: "One more dog never hurt anyone",
+    user_id: 9,
+    organization_id: 7,
+  })
+  
+  Review.create!({
+    rating: 5,  
+    body: "If you have any old blankets or sheets you're just going to toss, give them to Okandogs, they can use them!",
+    user_id: 10,
+    organization_id: 8,
+  })
+  
+  Review.create!({
+    rating: 5,  
+    body: "Walked in with nothing. Walked out with such a good boy.",
+    user_id: 1,
+    organization_id: 9,
+  })
+  
   puts "Done!"
 end
