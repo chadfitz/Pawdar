@@ -41,6 +41,8 @@
 
 .animal-show-top-section{
   border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
 }
 
 .animal-show-top-section h1{
@@ -53,6 +55,28 @@
 
 .animal-show-top-section p{
   padding-bottom: 30px;
+}
+
+.animal-show-heart{
+  font-size: 50px;
+}
+
+.animal-show-heart:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: .3s;
+  color: var(--primary-color);
+}
+
+.animal-show-heart-favorite{
+  font-size: 50px;
+  color: var(--primary-color);
+}
+
+.animal-show-heart-favorite:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: .3s;
 }
 
 .animal-show-middle-section{

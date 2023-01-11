@@ -1,16 +1,19 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAnimal, fetchAnimal } from '../../animals';
 import MeetAndGreetCreateForm from '../MeetAndGreet/MeetAndGreetCreateForm'
-import './AnimalShow.css';
 import { getOrganization, fetchOrganization } from '../../organizations';
+import { BsHeart, BsFillHeartFill } from 'react-icons/bs';
+import './AnimalShow.css';
 
 const AnimalShow = () => {
   const {animalId} = useParams();
   const dispatch = useDispatch();
   const animal = useSelector(getAnimal(animalId));
   const organization = useSelector(getOrganization(animal?.organizationId))
+
+  const [favorite, setFavorite] = useState(false);
   
   useEffect(()=>{
     dispatch(fetchAnimal(animalId));
@@ -19,6 +22,14 @@ const AnimalShow = () => {
   useEffect(()=>{
     if (animal) dispatch(fetchOrganization(animal.organizationId));
   }, [animal, dispatch])
+
+  const handleFavorite = () => {
+    if (!favorite){
+      setFavorite(true);
+    } else {
+      setFavorite(false);
+    }
+  }
   
   if (!animal) return null;
   
@@ -30,8 +41,14 @@ const AnimalShow = () => {
       <div className='animal-show-container'>
         <div className='animal-show-left'>
           <div className='animal-show-top-section'>
-            <h1>{animal.name}</h1>
-            <p>{animal.breed}</p>
+            <div className='animal-show-top-left'>
+              <h1>{animal.name}</h1>
+              <p>{animal.breed}</p>
+            </div>
+            <div className='animal-show-top-right'>
+              {!favorite && (<BsHeart className='animal-show-heart' onClick={handleFavorite}/>)}
+              {favorite && (<BsFillHeartFill className='animal-show-heart-favorite' onClick={handleFavorite}/>)}
+            </div>
           </div>
           <div className='animal-show-middle-section'>
             <ul>
