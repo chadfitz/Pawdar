@@ -5,29 +5,54 @@ import { getAnimal, fetchAnimal } from '../../animals';
 import MeetAndGreetCreateForm from '../MeetAndGreet/MeetAndGreetCreateForm'
 import { getOrganization, fetchOrganization } from '../../organizations';
 import { BsHeart, BsFillHeartFill } from 'react-icons/bs';
+import { createFavorite, deleteFavorite, fetchFavorites, getFavorites } from '../../favorites';
 import './AnimalShow.css';
 
 const AnimalShow = () => {
   const {animalId} = useParams();
   const dispatch = useDispatch();
   const animal = useSelector(getAnimal(animalId));
-  const organization = useSelector(getOrganization(animal?.organizationId))
+  const organization = useSelector(getOrganization(animal?.organizationId));
+  const sessionUser = useSelector(state => state.session.user);
+  const favorites = useSelector(getFavorites);
+  
+  const [favorited, setFavorited] = useState(false);
 
-  const [favorite, setFavorite] = useState(false);
+  const findFavoriteId = () => {
+    let favoriteId = null;
+    favorites.map(favorite => {
+      if (animal && favorite.animalId === animal.id) {
+        favoriteId = favorite.id;
+      }
+    })
+    return favoriteId;
+  }
+  const favoriteId = findFavoriteId();
   
   useEffect(()=>{
     dispatch(fetchAnimal(animalId));
   }, [animalId, dispatch])
   
   useEffect(()=>{
+    if (animal) setFavorited(animal.liked)
+  }, [animal])
+  
+  useEffect(()=>{
     if (animal) dispatch(fetchOrganization(animal.organizationId));
   }, [animal, dispatch])
 
+  useEffect(()=>{
+    if (sessionUser) dispatch(fetchFavorites(sessionUser));
+  }, [dispatch, sessionUser])
+
   const handleFavorite = () => {
-    if (!favorite){
-      setFavorite(true);
+    if (!favoriteId){
+      let favorite = {animalId, userId: sessionUser.id}
+      dispatch(createFavorite(favorite))
+      setFavorited(true);
     } else {
-      setFavorite(false);
+      dispatch(deleteFavorite(sessionUser, favoriteId))
+      setFavorited(false);
     }
   }
   
@@ -46,8 +71,8 @@ const AnimalShow = () => {
               <p>{animal.breed}</p>
             </div>
             <div className='animal-show-top-right'>
-              {!favorite && (<BsHeart className='animal-show-heart' onClick={handleFavorite}/>)}
-              {favorite && (<BsFillHeartFill className='animal-show-heart-favorite' onClick={handleFavorite}/>)}
+              {!favorited && (<BsHeart className='animal-show-heart' onClick={handleFavorite}/>)}
+              {favorited && (<BsFillHeartFill className='animal-show-heart-favorite' onClick={handleFavorite}/>)}
             </div>
           </div>
           <div className='animal-show-middle-section'>

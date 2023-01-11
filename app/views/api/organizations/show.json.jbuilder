@@ -14,5 +14,3 @@ json.set! :reviews do
     end
   end
 end
-
-# json.extract! @organization, :id, :name, :location, :animals

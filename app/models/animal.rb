@@ -26,7 +26,7 @@ class Animal < ApplicationRecord
 
   has_many :meet_and_greets
   has_many :favorites
-  has_many :favorited_by,
+  has_many :favorited_users,
     through: :favorites,
     source: :user
 end
