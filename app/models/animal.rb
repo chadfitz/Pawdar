@@ -3,6 +3,7 @@
 # Table name: animals
 #
 #  id              :bigint           not null, primary key
+#  name            :string
 #  species         :string           not null
 #  breed           :string
 #  size            :string
@@ -11,7 +12,6 @@
 #  color           :string
 #  coat            :string
 #  status          :string
-#  name            :string
 #  environment     :string
 #  organization_id :bigint           not null
 #  created_at      :datetime         not null

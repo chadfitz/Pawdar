@@ -76,12 +76,19 @@ img{
   margin-right: auto;
 }
 
+.search-bar-form{
+  height: 60px;
+  width: 100%;
+  display:flex;
+}
+
 .search-bar-left{
+  /* border: 1px solid red; */
   position: relative;
   align-content: stretch;
   display: flex;
   width: 100%;
-  /* border: 1px solid red; */
+  /* width: 45%; */
 }
 
 .vertical-line{
@@ -132,6 +139,7 @@ img{
 .search-icon{
   color: #fff;
   font-size: 25px;
+  background-color: var(--secondary-color);
   background-color: var(--primary-color);
   border: none;
   border-radius: 5px;
@@ -142,6 +150,28 @@ img{
 
 .search-icon:hover{
   border: 2px solid #fff;
+  outline: 2px solid var(--secondary-color);
   outline: 2px solid var(--primary-color);
+  cursor: pointer;
+}
+
+.search-icon-inactive{
+  text-align: center;
+  line-height: 42px;
+  color: #fff;
+  font-size: 25px;
+  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 5px;
+  height: 44px;
+  padding: 2px;
+  width: 44px;
+}
+
+.search-icon-inactive:hover{
+  border: 2px solid #fff;
+  outline: 2px solid var(--primary-color);
+  background-color: var(--secondary-color);
   cursor: pointer;
 }

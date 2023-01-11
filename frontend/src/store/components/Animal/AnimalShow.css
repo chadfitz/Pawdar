@@ -103,7 +103,9 @@
 
 .animal-show-upper-right{
   width: 303px;
-  height: 310px;
+  /* height: 310px; */
+  /* need height: auto for when 'please log in displays' */
+  height: auto;
   padding: 20px 30px;
   background-color: var(--primary-color);
   color: rgba(255, 255, 255, 0.95);

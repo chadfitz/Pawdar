@@ -54,8 +54,8 @@ const ProfilePage = () => {
             <h1 className='profile-header'>My Pawdar</h1>
             <ul className='profile-tabs'>
               <li className='about-me-tab open-tab' onClick={openAboutMe}>About Me</li>
-                <li className='meet-and-greets-tab' onClick={openMeetAndGreets}>Meet & Greets</li>
-              <li className='favorites-tab' onClick={openFavorites}>Favorites</li>
+              <li className='meet-and-greets-tab' onClick={openMeetAndGreets}>Meet & Greets</li>
+              {/* <li className='favorites-tab' onClick={openFavorites}>Favorites</li> */}
             </ul>
           </div>
           <div className='profile-body'>
@@ -78,11 +78,11 @@ const ProfilePage = () => {
                 <MeetAndGreetIndex />
               )}
             </div>
-            <div className='favorites-content'>
-              {showFavorites && (
-                <p>Favorites Test</p>
-              )}
-            </div>
+            {/* <div className='favorites-content'> */}
+              {/* {showFavorites && ( */}
+                {/* <p>Favorites Test</p> */}
+              {/* )} */}
+            {/* </div> */}
           </div>
         </div>
       </div>

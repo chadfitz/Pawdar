@@ -21,6 +21,14 @@ export const getAnimal = (animalId) => (state) => {
   return state?.animals ? state.animals[animalId] : null;
 }
 
+export const getSearchAnimals = (query) => (dispatch) => {
+  return fetchSearchAnimals(query)
+    .then(result => dispatch(receiveAnimals(result)))
+}
+// export const getSearchAnimals = (query) => (state) => {
+//   return state?.animals ? Object.values(state.animals) : [];
+// }
+
 // THUNK ACTION CREATORS:
 export const fetchAnimals = () => async (dispatch) => {
   const res = await fetch('/api/animals');
@@ -35,6 +43,15 @@ export const fetchAnimal = (animalId) => async (dispatch) => {
   if (res.ok) {
     const animal = await res.json();
     dispatch(receiveAnimal(animal));
+  }
+}
+
+// SEARCH THUNK ACTION CREATOR:
+export const fetchSearchAnimals = (query) => async (dispatch) => {
+  const res = await fetch(`/api/animals/search/${query}`);
+  if (res.ok){
+    const searchRes = await res.json();
+    dispatch(receiveAnimals(searchRes));
   }
 }
 
