@@ -1,10 +1,10 @@
-.meet-and-greets-container{
+.favorites-container{
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
-.meet-and-greet{
+.favorite{
   border: 1px solid var(--border-color);
   width: 200px;
   height: 370px;
@@ -17,29 +17,28 @@
   justify-content: space-between;
 }
 
-.meet-and-greet-inner-container{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.favorite:hover{
+  transform: scale(1.03);
+  transition: .3s;
 }
 
-.meet-and-greet-top{
+.favorite-top{
   height: 100%;
   width: 100%;
+  text-decoration: none;
+  color: var(--primary-color);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.meet-and-greet-top-image-container{
+.favorite-top-image-container{
   height: 100%;
   width: 140px;
   width: 100%;
 }
 
-.meet-and-greet-top img{
+.favorite-image{
   object-fit: contain;
   object-fit: cover;
   width: 140px;
@@ -50,28 +49,19 @@
   margin-bottom: 5px;
 }
 
-.meeting-header{
-  font-size: 20px;
-  margin-bottom: 15px;
+.favorite-name{
+  font-size: 40px;
+  margin-bottom: 36px;
 }
 
-.meeting-details{
-  margin-bottom: 20px;
+.favorite-bottom{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
-.meet-and-greet-bottom{
-  width: 100%;
-  align-self: center;
-  display: flex;
-  justify-content: space-between;
-}
-
-.meet-and-greet-bottom button{
-  width: 48%;
-  height: 30px;
+.favorite-bottom button{
+  width: 75%;
+  height: 40px;
   border: 2px solid var(--primary-color);
   background-color: var(--primary-color);
   border-radius: 23px;
@@ -82,7 +72,7 @@
   color: #fff;
 }
 
-.meet-and-greet-bottom button:hover{
+.favorite-bottom button:hover{
   cursor: pointer;
   border-color: var(--secondary-color);
   background-color: var(--secondary-color);

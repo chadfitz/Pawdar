@@ -55,7 +55,7 @@ const ProfilePage = () => {
             <h1 className='profile-header'>My Pawdar</h1>
             <ul className='profile-tabs'>
               <li className='about-me-tab open-tab' onClick={openAboutMe}>About Me</li>
-                <li className='meet-and-greets-tab' onClick={openMeetAndGreets}>Meet & Greets</li>
+              <li className='meet-and-greets-tab' onClick={openMeetAndGreets}>Meet & Greets</li>
               <li className='favorites-tab' onClick={openFavorites}>Favorites</li>
             </ul>
           </div>

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchFavorites, getFavorites } from '../../favorites';
 import FavoriteIndexItem from './FavoriteIndexItem';
+import './FavIndex.css';
 
 const FavoriteIndex = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const FavoriteIndex = () => {
   }, [sessionUser, dispatch])
 
   return (
-    <div className='favorites-container'>Favorite Index
+    <div className='favorites-container'>
       {favorites.map(favorite => <FavoriteIndexItem key={favorite.id} favorite={favorite} />)}
     </div>
   )
