@@ -9,7 +9,7 @@ const SearchBar = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [leftSearchInput, setLeftSearchInput] = useState("");
-  const [rightSearchInput, setRightSearchInput] = useState("");
+  // const [rightSearchInput, setRightSearchInput] = useState("");
   const [searchIcon, setSearchIcon] = useState("");
 
   const leftHandleChange = e => {
@@ -19,10 +19,10 @@ const SearchBar = () => {
     if (!(e.target.value)) setSearchIcon(false);
   }
 
-  const rightHandleChange = e => {
-    e.preventDefault();
-    setRightSearchInput(e.target.value);
-  }
+  // const rightHandleChange = e => {
+  //   e.preventDefault();
+  //   setRightSearchInput(e.target.value);
+  // }
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -40,13 +40,13 @@ const SearchBar = () => {
                 onChange={leftHandleChange}
                 value={leftSearchInput} />
         {/* </div> */}
-        <div className='vertical-line'></div>
+        {/* <div className='vertical-line'></div> */}
         {/* <div className='search-bar-right'> */}
-          <input className='search-bar-right'
+          {/* <input className='search-bar-right'
                 type="text"
                 placeholder='Enter City, State, or ZIP'
                 onChange={rightHandleChange}
-                value={rightSearchInput} />
+                value={rightSearchInput} /> */}
         {/* </div> */}
         <div className='search-icon-container'>
           {!searchIcon && (<div className="search-icon-inactive"><RxMagnifyingGlass /></div>)}

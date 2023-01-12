@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from 'react-router-dom';
-import { getSearchAnimals, fetchSearchAnimals } from '../../animals';
+import { getAnimals, fetchSearchAnimals } from '../../animals';
 import AnimalIndexItem from '../Animal/AnimalIndexItem';
 
 const SearchIndex = () => {
   const query = useParams();
   const dispatch = useDispatch();
-  const searchAnimals = useSelector(getSearchAnimals(query));
+  const searchAnimals = useSelector(getAnimals);
 
-  useEffect(()=>{
-    dispatch(fetchSearchAnimals(query))
-  }, [dispatch])
+  // useEffect(()=>{
+  //   dispatch(fetchSearchAnimals(query))
+  // }, [dispatch])
 
   return (
     <div>SearchIndex

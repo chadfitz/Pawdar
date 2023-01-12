@@ -9,9 +9,10 @@ class Api::AnimalsController < ApplicationController
   end
 
   def search
+    # debugger
     query = params[:query]
-    @animals = Animal.where('name ILIKE ? OR species ILIKE ? OR breed ILIKE ? OR size ILIKE ? OR gender ILIKE ? OR age ILIKE ? OR color ILIKE ? OR coat ILIKE ? OR status ILIKE ? OR environment ILIKE ?', 
-                            "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%"
+    @animals = Animal.where('name ILIKE ? OR species ILIKE ? OR breed ILIKE ? OR size ILIKE ? OR gender ILIKE ? OR age ILIKE ? OR color ILIKE ? OR coat ILIKE ? OR status ILIKE ?', 
+                            "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%", "%#{query}%"
                           )
     if @animals.length > 0
       render :index

@@ -3,10 +3,11 @@ export const RECEIVE_ANIMALS = 'animals/RECEIVE_ANIMALS';
 export const RECEIVE_ANIMAL = 'animals/RECEIVE_ANIMAL';
 
 // ACTION CREATORS:
-export const receiveAnimals = (animals) => ({
-  type: RECEIVE_ANIMALS,
-  animals
-});
+export const receiveAnimals = (animals) => {
+  debugger
+  return {type: RECEIVE_ANIMALS,
+  animals}
+};
 
 export const receiveAnimal = (animal) => ({
   type: RECEIVE_ANIMAL,
@@ -21,10 +22,10 @@ export const getAnimal = (animalId) => (state) => {
   return state?.animals ? state.animals[animalId] : null;
 }
 
-export const getSearchAnimals = (query) => (dispatch) => {
-  return fetchSearchAnimals(query)
-    .then(result => dispatch(receiveAnimals(result)))
-}
+// export const getSearchAnimals = (query) => (dispatch) => {
+//   return fetchSearchAnimals(query)
+//     .then(result => dispatch(receiveAnimals(result)))
+// }
 // export const getSearchAnimals = (query) => (state) => {
 //   return state?.animals ? Object.values(state.animals) : [];
 // }
@@ -48,6 +49,7 @@ export const fetchAnimal = (animalId) => async (dispatch) => {
 
 // SEARCH THUNK ACTION CREATOR:
 export const fetchSearchAnimals = (query) => async (dispatch) => {
+  debugger;
   const res = await fetch(`/api/animals/search/${query}`);
   if (res.ok){
     const searchRes = await res.json();
@@ -61,7 +63,7 @@ const animalsReducer = (state={}, action) => {
   let newState = {...state};
   switch(action.type){
     case RECEIVE_ANIMALS:
-      return {...newState, ...action.animals};
+      return {...action.animals};
     case RECEIVE_ANIMAL:
       return {...newState, [action.animal.animal.id]: action.animal.animal};
     default:
