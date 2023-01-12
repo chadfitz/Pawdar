@@ -44,10 +44,8 @@ img{
   position: relative;
   color: #fff;
   margin: 0;
-  /* top: 55%; */
   font-size: 45px;
   line-height: 54px;
-  /* margin-top: 10px; */
 }
 .hero-body-message{
   position: relative;
@@ -60,12 +58,10 @@ img{
 .search-bar-container{
   position: absolute;
   top: 26.5%;
-  /* border: 1 px solid red; */
   width: 100%;
 }
 
 .search-bar{
-  /* border: 1px solid burlywood; */
   background-color: #fff;
   width: 808px;
   border-radius: 5px;
@@ -76,33 +72,17 @@ img{
   margin-right: auto;
 }
 
-.search-bar-left{
+.search-bar-form{
+  height: 60px;
+  width: 100%;
+  display:flex;
+}
+
+.search-bar input{
   position: relative;
   align-content: stretch;
   display: flex;
   width: 100%;
-  /* border: 1px solid red; */
-}
-
-.vertical-line{
-  border: 0.5px solid #d2d1d3;
-  margin: 10px 0;
-  /* padding-bottom: 33px; */
-}
-
-.vertical-line{
-  border: 0.5px solid #d2d1d3;
-  margin: 10px 0;
-  /* padding-bottom: 33px; */
-}
-
-.search-bar-right{
-  display: flex;
-  position: relative;
-  width: 100%;
-}
-
-.search-bar input{
   border: 1px solid #fff;
   box-shadow: inset 0 -3px #fff;
   padding: 12px;
@@ -132,6 +112,7 @@ img{
 .search-icon{
   color: #fff;
   font-size: 25px;
+  background-color: var(--secondary-color);
   background-color: var(--primary-color);
   border: none;
   border-radius: 5px;
@@ -142,6 +123,28 @@ img{
 
 .search-icon:hover{
   border: 2px solid #fff;
+  outline: 2px solid var(--secondary-color);
   outline: 2px solid var(--primary-color);
+  cursor: pointer;
+}
+
+.search-icon-inactive{
+  text-align: center;
+  line-height: 42px;
+  color: #fff;
+  font-size: 25px;
+  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 5px;
+  height: 44px;
+  padding: 2px;
+  width: 44px;
+}
+
+.search-icon-inactive:hover{
+  border: 2px solid #fff;
+  outline: 2px solid var(--primary-color);
+  background-color: var(--secondary-color);
   cursor: pointer;
 }

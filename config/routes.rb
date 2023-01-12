@@ -13,10 +13,17 @@ Rails.application.routes.draw do
     resources :organizations, only: [:index, :show] do
       resources :reviews, only: [:index, :show]
     end
-    resources :animals, only: [:index, :show]
+    resources :animals, only: [:index, :show] do
+      collection do
+        # get 'animals/search/:query', :to => 'animals#index'
+        # get '/search/:query', :to => 'animals#index'
+        # get '/search/:query', :to => 'animals#index', as "search"
+        # get '/search/:query', to: 'animals#search'
+        get '/search/:query', to: 'animals#search', :as => "search"
+      end
+    end
     resources :meet_and_greets, only: [:create, :update]
     resources :reviews, only: [:create, :update]
-    resources :favorites, only: :create
     resource :session, only: [:show, :create, :destroy]
   end
 

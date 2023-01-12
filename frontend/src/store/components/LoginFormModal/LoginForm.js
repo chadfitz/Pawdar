@@ -49,7 +49,7 @@ const LoginForm = () => {
     <div className="inner-login-modal-content-container">
       <div className="login-modal-upper-content">
         <h1>Log In</h1>
-        <form onSubmit={handleSubmit}>
+        <form className="login-form" onSubmit={handleSubmit}>
           <ul>
             {errors.map(error => <li className="login-error" key={error}>{error}</li>)}
           </ul>

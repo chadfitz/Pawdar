@@ -2,20 +2,16 @@ class Api::ReviewsController < ApplicationController
   before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def index
-    # debugger
-    # @reviews = Review.all
     @reviews = Review.where(organization_id: params[:organization_id])
     render :index
   end
 
   def show
-    # debugger
     @review = Review.find_by(id: params[:id])
     render :show
   end
 
   def create
-    # debugger
     @review = Review.new(review_params)
     @review.user_id = current_user.id
     if @review&.save!

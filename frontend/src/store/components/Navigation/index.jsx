@@ -5,7 +5,7 @@ import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import ProfileButton from './ProfileButton';
 import { GiDogHouse } from 'react-icons/gi';
-import { FaHeart } from 'react-icons/fa';
+// import { FaHeart } from 'react-icons/fa';
 import './Navigation.css';
 
 const Navigation = () => {
@@ -43,11 +43,11 @@ const Navigation = () => {
           <div><NavLink exact to="/organizations" className="nav-left-navlink">ORGANIZATIONS</NavLink></div>
         </div>
         <div className='nav-right'>
-          <div className='nav-favorite'>
+          {/* <div className='nav-favorite'> */}
             {/* NavLink to favorites if logged in */}
-              <FaHeart size={30}/>
+              {/* <FaHeart size={30}/> */}
             {/* otherwise link to sign-up */}
-          </div>
+          {/* </div> */}
           <>
             {sessionLinks}
           </>

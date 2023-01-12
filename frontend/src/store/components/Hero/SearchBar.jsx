@@ -1,43 +1,42 @@
 import React from "react";
 import { useState } from "react";
 import { RxMagnifyingGlass } from "react-icons/rx";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { fetchSearchAnimals } from "../../animals";
 
 const SearchBar = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
   const [leftSearchInput, setLeftSearchInput] = useState("");
-  const [rightSearchInput, setRightSearchInput] = useState("");
+  const [searchIcon, setSearchIcon] = useState("");
 
   const leftHandleChange = e => {
     e.preventDefault();
     setLeftSearchInput(e.target.value);
+    setSearchIcon(true);
+    if (!(e.target.value)) setSearchIcon(false);
   }
 
-  const rightHandleChange = e => {
+  const handleSubmit = e => {
     e.preventDefault();
-    setRightSearchInput(e.target.value);
+    dispatch(fetchSearchAnimals(leftSearchInput));
+    history.push(`/search/${leftSearchInput}`);
   }
 
   return (
     <div className="search-bar-container">
-      <div className="search-bar">
-        <div className="search-bar-left">
-          <input 
-                type="text" 
-                placeholder='Search Terrier, Kitten, etc.'
-                onChange={leftHandleChange}
-                value={leftSearchInput} />
-        </div>
-        <div className='vertical-line'></div>
-        <div className='search-bar-right'>
-          <input 
-                type="text"
-                placeholder='Enter City, State, or ZIP'
-                onChange={rightHandleChange}
-                value={rightSearchInput} />
-        </div>
+      <form className="search-bar" onSubmit={handleSubmit}>
+        <input
+              type="text" 
+              placeholder='Search Husky, Kitten, etc.'
+              onChange={leftHandleChange}
+              value={leftSearchInput} />
         <div className='search-icon-container'>
-          <button className='search-icon'><RxMagnifyingGlass /></button>
+          {!searchIcon && (<div className="search-icon-inactive"><RxMagnifyingGlass /></div>)}
+          {searchIcon && (<button className='search-icon'><RxMagnifyingGlass /></button>)}
         </div>
-      </div>
+      </form>
     </div>
   )
 }
