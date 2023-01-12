@@ -1,0 +1,9 @@
+.search-index-list{
+  max-width: 1220px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 0 50px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
