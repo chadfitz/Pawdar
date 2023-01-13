@@ -695,6 +695,27 @@ ApplicationRecord.transaction do
     user_id: 11,
     organization_id: 9
   })
+
+  puts "Creating favorites..."
+  Favorite.create!({
+    user_id: 1,
+    animal_id: 24
+  })
+  
+  Favorite.create!({
+    user_id: 1,
+    animal_id: 23
+  })
+
+  Favorite.create!({
+    user_id: 1,
+    animal_id: 22
+  })
+  
+  Favorite.create!({
+    user_id: 1,
+    animal_id: 3
+  })
   
   puts "Done!"
 end

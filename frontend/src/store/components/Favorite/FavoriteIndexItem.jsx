@@ -19,7 +19,7 @@ const FavoriteIndexItem = ({ favorite }) => {
       {animal && (
         <NavLink to={`/animals/${animal.id}`} className='favorite-top'>
           <div className='favorite-top-image-container'>
-            {/* {animal && (<img className='favorite-image' src={animal.photoUrl} alt="" />)} */}
+            {animal && (<img className='favorite-image' src={animal.photoUrl} alt="" />)}
           </div>
           {animal && (
             <h2 className='favorite-name'>{animal.name}</h2>

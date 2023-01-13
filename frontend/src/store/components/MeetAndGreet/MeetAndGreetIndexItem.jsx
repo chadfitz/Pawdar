@@ -33,7 +33,7 @@ const MeetAndGreetIndexItem = ({ meetAndGreet }) => {
       <div className='meet-and-greet-inner-container'>
         <div className='meet-and-greet-top'>
           <div className='meet-and-greet-top-image-container'>
-            {/* {animal && (<img src={animal.photoUrl} alt="" />)} */}
+            {animal && (<img src={animal.photoUrl} alt="" />)}
           </div>
           {animal && (
           <h1 className='meeting-header'>Meeting with<br/>
