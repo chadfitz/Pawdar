@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-ApplicationRecord.transaction do 
+# ApplicationRecord.transaction do 
   require "open-uri"
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
@@ -718,4 +718,4 @@ ApplicationRecord.transaction do
   })
   
   puts "Done!"
-end
+# end
