@@ -12,6 +12,10 @@ const OrganizationIndex = () => {
     dispatch(fetchOrganizations());
   }, [dispatch])
 
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[])
+
   return(
     <div className="org-index-container">
       <h1 className="org-index-header">Organizations</h1>

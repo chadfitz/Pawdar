@@ -16,6 +16,10 @@ const OrganizationShow = () => {
     dispatch(fetchOrganization(organizationId));
   }, [organizationId, dispatch])
 
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[])
+
   if (!organization) return null;
 
   return(

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import MeetAndGreetIndex from '../MeetAndGreet/MeetAndGreetIndex';
 import FavoriteIndex from '../Favorite/FavoriteIndex';
@@ -46,6 +46,11 @@ const ProfilePage = () => {
     setShowFavorites(true);
     e.currentTarget.classList.add('open-tab');
   }
+
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[])
+  
 
   return (
     <div role="main" className='main'>

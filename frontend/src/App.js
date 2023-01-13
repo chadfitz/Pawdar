@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import Hero from "./store/components/Hero/HeroIndex";
 import Navigation from "./store/components/Navigation";
@@ -11,6 +11,11 @@ import OrganizationShow from "./store/components/Organization/OrganizationShow";
 import SearchIndex from "./store/components/Search/SearchIndex";
 
 function App() {
+
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[])
+  
   return (
     <>
       <Navigation />

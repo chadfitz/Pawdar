@@ -47,6 +47,10 @@ const AnimalShow = () => {
     if (sessionUser) dispatch(fetchFavorites(sessionUser));
   }, [dispatch, sessionUser])
 
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[])
+
   const handleFavorite = () => {
     if (!favoriteId){
       if (sessionUser) {

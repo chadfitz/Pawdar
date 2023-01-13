@@ -21,6 +21,10 @@ const SearchIndex = () => {
     dispatch(fetchSearchAnimals(query));
   },[dispatch, query])
 
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[])
+
   return (
     <ul className='search-index-list'>
         {searchSuccess && searchAnimals.map(animal => <AnimalIndexItem key={animal.id} animal={animal} />)}
