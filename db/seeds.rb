@@ -10,11 +10,11 @@ ApplicationRecord.transaction do
   require "open-uri"
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
-  User.destroy_all
   Organization.destroy_all
   Animal.destroy_all
   MeetAndGreet.destroy_all
   Review.destroy_all
+  User.destroy_all
 
   puts "Resetting primary keys..."
   # For easy testing, so that after seeding, the first `User` has `id` of 1
