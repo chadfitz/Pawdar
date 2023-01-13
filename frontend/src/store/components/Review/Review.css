@@ -19,6 +19,13 @@
   color: var(--primary-color);
 }
 
+.review-body{
+  width: 100%;
+  text-align: center;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+}
+
 .review-buttons-container{
   width: 220px;
   padding-top: 30px;

@@ -25,9 +25,9 @@ const SearchIndex = () => {
     <ul className='search-index-list'>
         {searchSuccess && searchAnimals.map(animal => <AnimalIndexItem key={animal.id} animal={animal} />)}
         {!searchSuccess && (
-          <div className='search-error-message'>
+          <div className='error-page'>
             <p>Sorry, we did not find any results for your search</p>
-            <NavLink to="/">Back to Home</NavLink>
+            <NavLink to="/" className='error-page-link'>Back to Home</NavLink>
           </div>
         )}
     </ul>
