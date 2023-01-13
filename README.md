@@ -2,11 +2,9 @@
 
 Pawdar is a clone of the website, petfinder.com, and was created with a Ruby on Rails backend, React, and Redux.
 
-Users can log in or sign up to add animals to their favorites, create meet & greets with animals, or leave reviews for organizations.
+Users can log in or sign up to add animals to their favorites, create meet & greets with animals, or leave reviews for organizations. Helpful errors are displayed when not logged in.
 
-[](C:\Users\fitzc\OneDrive\Pictures\Screenshots\Screenshot_20230113_092309.png)  
-
-[](C:\Users\fitzc\OneDrive\Pictures\Screenshots\Screenshot_20230113_092105.png)  
+![Screenshot_20230113_101326](https://user-images.githubusercontent.com/114632959/212390737-a7479daf-c42c-4eb9-8b36-94ddddef8922.png)
 
 Users are able to search for animals by criteria, such as puppy, cat, black, or calico. 
 
