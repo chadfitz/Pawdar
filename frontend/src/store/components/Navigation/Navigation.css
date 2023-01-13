@@ -18,6 +18,13 @@
   z-index: 1;
 }
 
+.site-logo{
+  position: absolute;
+  font-size: 65px;
+  color: var(--primary-color);
+  margin: auto;
+}
+
 .region--inner{
   height: 100%;
   display: flex;

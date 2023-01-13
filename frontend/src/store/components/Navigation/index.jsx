@@ -5,6 +5,7 @@ import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import ProfileButton from './ProfileButton';
 import { GiDogHouse } from 'react-icons/gi';
+import { IoIosPaw } from 'react-icons/io';
 import './Navigation.css';
 
 const Navigation = () => {
@@ -32,6 +33,7 @@ const Navigation = () => {
 
   return (
     <nav className='nav-bar'>
+      <IoIosPaw className='site-logo'/>
       <div className='region--inner'>
         <div className='nav-left'>
           <div className='home-logo'>
