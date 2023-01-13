@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../session";
 import { IoMdPerson } from "react-icons/io";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
 const ProfileButton = ({ user }) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const [showMenu, setShowMenu] = useState(false);
 
   const openMenu = (e) => {
@@ -31,6 +32,7 @@ const ProfileButton = ({ user }) => {
   const logout = e => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    history.push(`/`);
   }
 
   return (
@@ -46,7 +48,6 @@ const ProfileButton = ({ user }) => {
       {showMenu && (
         <ul className="profile-dropdown">
           <NavLink exact to="/user/profile"><li>Profile</li></NavLink>
-          {/* <NavLink exact to="/user/meetAndGreets"><li>Meet & Greets</li></NavLink> */}
           <li><button onClick={logout}>Log Out</button></li>
         </ul>
       )}  

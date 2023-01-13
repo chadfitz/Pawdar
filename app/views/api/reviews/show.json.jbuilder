@@ -1,1 +1,1 @@
-json.extract! @review, :id, :rating, :body, :user
+json.extract! @review, :id, :rating, :body, :user, :user_id

@@ -8,20 +8,20 @@ import { fetchSearchAnimals } from "../../animals";
 const SearchBar = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const [leftSearchInput, setLeftSearchInput] = useState("");
+  const [searchInput, setSearchInput] = useState("");
   const [searchIcon, setSearchIcon] = useState("");
 
-  const leftHandleChange = e => {
+  const handleChange = e => {
     e.preventDefault();
-    setLeftSearchInput(e.target.value);
+    setSearchInput(e.target.value);
     setSearchIcon(true);
     if (!(e.target.value)) setSearchIcon(false);
   }
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(fetchSearchAnimals(leftSearchInput));
-    history.push(`/search/${leftSearchInput}`);
+    dispatch(fetchSearchAnimals(searchInput))
+      .then(()=>history.push(`/search/${searchInput}`));
   }
 
   return (
@@ -30,8 +30,8 @@ const SearchBar = () => {
         <input
               type="text" 
               placeholder='Search Husky, Kitten, etc.'
-              onChange={leftHandleChange}
-              value={leftSearchInput} />
+              onChange={handleChange}
+              value={searchInput} />
         <div className='search-icon-container'>
           {!searchIcon && (<div className="search-icon-inactive"><RxMagnifyingGlass /></div>)}
           {searchIcon && (<button className='search-icon'><RxMagnifyingGlass /></button>)}

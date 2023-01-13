@@ -9,7 +9,7 @@ const Hero = () => {
       <SearchBar />
       <div className="hero-body-container">
         <h1 className="hero-body-header">Find your new best friend</h1>
-        <div className="hero-body-message">Browse pets from our network of over 11,500 shelters and rescues</div>
+        <div className="hero-body-message">Browse pets from my network of 11 cats and 17 dogs</div>
       </div>
     </div>
   )

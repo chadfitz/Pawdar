@@ -1,6 +1,7 @@
 // ACTION CONSTANTS:
 export const RECEIVE_ANIMALS = 'animals/RECEIVE_ANIMALS';
 export const RECEIVE_ANIMAL = 'animals/RECEIVE_ANIMAL';
+export const CLEAR_ANIMALS = 'animals/CLEAR_ANIMALS';
 
 // ACTION CREATORS:
 export const receiveAnimals = (animals) => {
@@ -11,6 +12,10 @@ export const receiveAnimals = (animals) => {
 export const receiveAnimal = (animal) => ({
   type: RECEIVE_ANIMAL,
   animal
+})
+
+export const clearAnimals = () => ({
+  type: CLEAR_ANIMALS
 })
 
 export const getAnimals = (state) => {
@@ -52,6 +57,8 @@ export const fetchSearchAnimals = (query) => async (dispatch) => {
   if (res.ok){
     const searchRes = await res.json();
     dispatch(receiveAnimals(searchRes));
+  } else {
+    dispatch(clearAnimals());
   }
 }
 
@@ -64,6 +71,8 @@ const animalsReducer = (state={}, action) => {
       return {...action.animals};
     case RECEIVE_ANIMAL:
       return {...newState, [action.animal.animal.id]: action.animal.animal};
+    case CLEAR_ANIMALS:
+      return {}
     default:
       return state;
   }

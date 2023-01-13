@@ -688,6 +688,13 @@ ApplicationRecord.transaction do
     user_id: 1,
     organization_id: 9,
   })
+  #15
+  Review.create!({
+    rating: 5,
+    body: "I like this place",
+    user_id: 11,
+    organization_id: 9
+  })
   
   puts "Done!"
 end

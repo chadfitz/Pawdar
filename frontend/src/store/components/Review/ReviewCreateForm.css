@@ -37,6 +37,15 @@
   width: 340px;
 }
 
+.review-create-form-body:hover{
+  border: 1px solid var(--primary-color);
+}
+
+.review-create-form-body:focus-visible{
+  border: 1px solid var(--primary-color);
+  outline: none;
+}
+
 .review-create-form-button{
   font-family: var(--primary-font);  
   font-weight: 500;
@@ -56,4 +65,18 @@
   background-color: var(--secondary-color);
   color: #fff;
   transition: .3s;
+}
+
+.review-create-form-login-error{
+  margin-top: 15px;
+  color: red;
+}
+
+.review-thanks{
+  width: 400px;
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 30px;
+  margin: 20px auto;
+  margin-top: 25px;
 }

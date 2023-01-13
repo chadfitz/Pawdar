@@ -17,6 +17,7 @@ const AnimalShow = () => {
   const favorites = useSelector(getFavorites);
   
   const [favorited, setFavorited] = useState(false);
+  const [favoriteLoginError, setFavoriteLoginError] = useState(false);
 
   const findFavoriteId = () => {
     let favoriteId = null;
@@ -24,6 +25,7 @@ const AnimalShow = () => {
       if (animal && favorite.animalId === animal.id) {
         favoriteId = favorite.id;
       }
+      return null;
     })
     return favoriteId;
   }
@@ -47,17 +49,26 @@ const AnimalShow = () => {
 
   const handleFavorite = () => {
     if (!favoriteId){
-      let favorite = {animalId, userId: sessionUser.id}
-      dispatch(createFavorite(favorite))
-      setFavorited(true);
+      if (sessionUser) {
+        let favorite = {animalId, userId: sessionUser.id}
+        dispatch(createFavorite(favorite))
+        setFavorited(true);
+        setFavoriteLoginError(false);
+      } else {
+        setFavoriteLoginError(true);
+      }
     } else {
       dispatch(deleteFavorite(sessionUser, favoriteId))
       setFavorited(false);
     }
   }
+
+  useEffect(()=>{
+    if (sessionUser && !favoriteId) setFavoriteLoginError(false);
+  }, [sessionUser, favoriteId])
   
   if (!animal) return null;
-  
+  console.log(animal)
   return(
     <div className='animal-show-window'>
       <div className='animal-image-container'>
@@ -73,6 +84,7 @@ const AnimalShow = () => {
             <div className='animal-show-top-right'>
               {!favorited && (<BsHeart className='animal-show-heart' onClick={handleFavorite}/>)}
               {favorited && (<BsFillHeartFill className='animal-show-heart-favorite' onClick={handleFavorite}/>)}
+              {favoriteLoginError && (<p className='favorited-error'>Log in to favorite</p>)}
             </div>
           </div>
           <div className='animal-show-middle-section'>

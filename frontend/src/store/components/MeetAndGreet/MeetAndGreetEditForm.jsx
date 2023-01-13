@@ -34,8 +34,8 @@ const MeetAndGreetEditForm = ({ meetAndGreetId, setEdit }) => {
 
 
   const handleSubmit = (e) => {
-    let newMeet = {startTime, date, id: meetAndGreetId}
     e.preventDefault();
+    let newMeet = {startTime, date, id: meetAndGreetId}
     dispatch(updateMeetAndGreet(newMeet));
     setEdit(false);
   }

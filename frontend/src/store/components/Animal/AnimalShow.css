@@ -57,6 +57,10 @@
   padding-bottom: 30px;
 }
 
+.animal-show-top-right{
+  text-align: right;
+}
+
 .animal-show-heart{
   font-size: 50px;
 }
@@ -77,6 +81,10 @@
   cursor: pointer;
   transform: scale(1.1);
   transition: .3s;
+}
+
+.favorited-error{
+  color: red;
 }
 
 .animal-show-middle-section{
@@ -127,7 +135,6 @@
 
 .animal-show-upper-right{
   width: 303px;
-  /* height: 310px; */
   /* need height: auto for when 'please log in displays' */
   height: auto;
   padding: 20px 30px;

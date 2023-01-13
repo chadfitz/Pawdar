@@ -9,7 +9,6 @@ const FavoriteIndex = () => {
   const dispatch = useDispatch();
   const favorites = useSelector(getFavorites);
   const sessionUser = useSelector(state => state.session.user);
-  console.log(favorites)
 
   useEffect(()=>{
     dispatch(fetchFavorites(sessionUser));

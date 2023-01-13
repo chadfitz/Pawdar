@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { createReview } from '../../reviews';
@@ -14,27 +14,34 @@ const ReviewCreateForm = () => {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
   const [body, setBody] = useState("");
-  const [errors, setErrors] = useState(false);
+  const [ratingErrors, setRatingErrors] = useState(false);
+  const [loginError, setLoginError] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
     let review = {rating, body, organizationId}
-    if (review.rating === null) {
-      setErrors(true);
-      return;
-    }
     if (sessionUser) {
-      dispatch(createReview(review));
-      setShowForm(false);
+      if (review.rating === null) {
+        setRatingErrors(true);
+      } else {
+        dispatch(createReview(review));
+        setShowForm(false);
+      }
+    } else {
+      setLoginError(true);
     }
   }
+
+  useEffect(()=>{
+    if (sessionUser) setLoginError(false);
+  },[sessionUser])
 
   return (
     <>
       {showForm && (
         <form onSubmit={handleSubmit} className="review-create-form">
           <h2 className='review-create-form-header'>Rate your experience</h2>
-          {errors && (<div className='review-create-form-errors'>Please enter a rating</div>)}
+          {ratingErrors && (<div className='review-create-form-errors'>Please enter a rating</div>)}
           <div className='star-rating-container'>
             {[...Array(5)].map((star, i) => {
               const ratingValue = i + 1;
@@ -60,8 +67,10 @@ const ReviewCreateForm = () => {
           <h2 className='review-create-form-header'>Describe your experience</h2>
           <textarea className='review-create-form-body' rows='10' onChange={e=>setBody(e.target.value)}></textarea>
           <button className='review-create-form-button'>REVIEW</button>
+            {loginError && (<p className='review-create-form-login-error'>Log in to review</p>)}
         </form>
       )}
+      {!showForm && (<p className='review-thanks'>Thanks for your review!</p>)}
     </>
   )
 }

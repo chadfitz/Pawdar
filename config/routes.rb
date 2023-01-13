@@ -15,13 +15,10 @@ Rails.application.routes.draw do
     end
     resources :animals, only: [:index, :show] do
       collection do
-        # get 'animals/search/:query', :to => 'animals#index'
-        # get '/search/:query', :to => 'animals#index'
-        # get '/search/:query', :to => 'animals#index', as "search"
-        # get '/search/:query', to: 'animals#search'
         get '/search/:query', to: 'animals#search', :as => "search"
       end
     end
+    resources :favorites, only: [:create]
     resources :meet_and_greets, only: [:create, :update]
     resources :reviews, only: [:create, :update]
     resource :session, only: [:show, :create, :destroy]
