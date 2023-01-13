@@ -1,24 +1,13 @@
-# README
+# PAWDAR
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Pawdar is a clone of the website, petfinder.com, and was created with a Ruby on Rails backend, React, and Redux.
 
-Things you may want to cover:
+Users can log in or sign up to add animals to their favorites, create meet & greets with animals, or leave reviews for organizations.
 
-* Ruby version
+[](C:\Users\fitzc\OneDrive\Pictures\Screenshots\Screenshot_20230113_092309.png)  
 
-* System dependencies
+[](C:\Users\fitzc\OneDrive\Pictures\Screenshots\Screenshot_20230113_092105.png)  
 
-* Configuration
+Users are able to search for animals by criteria, such as puppy, cat, black, or calico. 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[](C:\Users\fitzc\OneDrive\Desktop\pawdar_search.gif)
