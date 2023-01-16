@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAnimal, fetchAnimal } from '../../animals';
@@ -19,7 +19,7 @@ const AnimalShow = () => {
   const [favorited, setFavorited] = useState(false);
   const [favoriteLoginError, setFavoriteLoginError] = useState(false);
 
-  const findFavoriteId = () => {
+  const findFavoriteId = useCallback(() => {
     let favoriteId = null;
     favorites.map(favorite => {
       if (animal && favorite.animalId === animal.id) {
@@ -28,7 +28,7 @@ const AnimalShow = () => {
       return null;
     })
     return favoriteId;
-  }
+  }, [animal, favorites])
   const favoriteId = findFavoriteId();
   
   useEffect(()=>{
@@ -46,6 +46,11 @@ const AnimalShow = () => {
   useEffect(()=>{
     if (sessionUser) dispatch(fetchFavorites(sessionUser));
   }, [dispatch, sessionUser])
+
+  useEffect(()=>{
+    const favoriteId = findFavoriteId();
+    if (sessionUser && favoriteId) setFavorited(true);
+  }, [favorites, sessionUser, findFavoriteId])
 
   useEffect(()=>{
     window.scrollTo(0, 0)
@@ -67,12 +72,13 @@ const AnimalShow = () => {
     }
   }
 
+  // remove log in to favorite error upon log in
   useEffect(()=>{
     if (sessionUser && !favoriteId) setFavoriteLoginError(false);
   }, [sessionUser, favoriteId])
   
   if (!animal) return null;
-  console.log(animal)
+
   return(
     <div className='animal-show-window'>
       <div className='animal-image-container'>

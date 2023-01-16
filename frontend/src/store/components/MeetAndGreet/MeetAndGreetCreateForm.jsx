@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createMeetAndGreet } from '../../meetAndGreets';
-// import LoginFormModal from '../LoginFormModal';
 import './MnGCreateForm.css';
 
 const MeetAndGreetCreateForm = () => {
@@ -59,17 +58,15 @@ const MeetAndGreetCreateForm = () => {
         <button className='meet-and-greet-form-button'>SCHEDULE</button>
       </form>
       )}
-      {showLogin && (
+      {!sessionUser && showLogin && (
         <div className='login-container'>
-          <p>Please Log In</p>
-          {/* <div className='login-button-container'>
-            <LoginFormModal />
-          </div> */}
+          <p>Log In to Schedule</p>
         </div>
       )}
       {!showForm && (
         <div className='success-display'>
           <h1>Success!</h1>
+          <p>Visit your profile to view meet & greets</p>
         </div>
       )}
     </>
