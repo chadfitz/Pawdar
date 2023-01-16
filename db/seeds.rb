@@ -10,10 +10,10 @@
   require "open-uri"
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
-  Organization.destroy_all
-  Animal.destroy_all
   MeetAndGreet.destroy_all
   Review.destroy_all
+  Animal.destroy_all
+  Organization.destroy_all
   User.destroy_all
 
   puts "Resetting primary keys..."
