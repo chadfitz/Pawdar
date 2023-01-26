@@ -15,15 +15,16 @@ const ReviewCreateForm = () => {
   const [hover, setHover] = useState(null);
   const [body, setBody] = useState("");
   const [ratingErrors, setRatingErrors] = useState(false);
+  const [bodyErrors, setBodyErrors] = useState(false);
   const [loginError, setLoginError] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
     let review = {rating, body, organizationId}
     if (sessionUser) {
-      if (review.rating === null) {
-        setRatingErrors(true);
-      } else {
+      if (review.rating === null) {setRatingErrors(true)} else {setRatingErrors(false)}
+      if (review.body.length === 0) {setBodyErrors(true)} else {setBodyErrors(false)}
+      if (review.rating !== null && review.body.length !== 0) {
         dispatch(createReview(review));
         setShowForm(false);
       }
@@ -65,7 +66,8 @@ const ReviewCreateForm = () => {
             })}
           </div>
           <h2 className='review-create-form-header'>Describe your experience</h2>
-          <textarea className='review-create-form-body' rows='10' onChange={e=>setBody(e.target.value)}></textarea>
+          {bodyErrors && (<div className='review-create-form-errors'>Please enter a description</div>)}
+          <textarea className='review-create-form-body' rows='10' onChange={e=>setBody(e.target.value)} ></textarea>
           <button className='review-create-form-button'>REVIEW</button>
             {loginError && (<p className='review-create-form-login-error'>Log in to review</p>)}
         </form>
