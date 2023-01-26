@@ -1,0 +1,21 @@
+.footer{
+  width: 100%;
+  height: 85px;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footer > h2{
+  color: #fff;
+}
+
+.footer-socials-link{
+  height: 50px;
+  width: 50px;
+}
+.footer-socials-link:hover{
+  transform: scale(1.1);
+  transition: 0.3s;
+}

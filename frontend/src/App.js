@@ -9,6 +9,7 @@ import ProfilePage from "./store/components/ProfilePage/ProfilePageIndex";
 import OrganizationIndex from "./store/components/Organization/OrganizationIndex";
 import OrganizationShow from "./store/components/Organization/OrganizationShow";
 import SearchIndex from "./store/components/Search/SearchIndex";
+import Footer from "./store/components/Footer/Footer";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/search/:query" component={SearchIndex} />
           <Route component={NotFound} />
         </Switch>
+      <Footer />
     </>
   );
 }
