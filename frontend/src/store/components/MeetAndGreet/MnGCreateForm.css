@@ -120,7 +120,11 @@
   text-decoration: none;
   color: #fff;
 }
-.success-display:hover{
+.success-display p{
+  font-size: 17px;
+  margin-top: 10px;
+}
+.success-display p:hover{
   cursor: pointer;
   transform: scale(1.1);
   transition: 0.3s;

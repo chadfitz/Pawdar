@@ -21,13 +21,8 @@ const MeetAndGreetCreateForm = () => {
   
   const findExistingMnG = useCallback(()=> {
     let meetAndGreetId;
-    console.log(sessionUser.meetAndGreets);
     sessionUser.meetAndGreets.map(meetAndGreet => {
-      console.log("meetAndGreet.animal_id: ", meetAndGreet.animal_id)
-      console.log("animalId", animalId)
-        console.log("meetAndGreet:", meetAndGreet)
       if (animalId && meetAndGreet.animal_id == animalId) {
-        console.log(meetAndGreet)
         meetAndGreetId = meetAndGreet.id;
       }
       return meetAndGreetId;
@@ -87,9 +82,9 @@ const MeetAndGreetCreateForm = () => {
         </div>
       )}
       {!showForm && (
-        <div className='success-display' onClick={()=>history.push(`/user/profile`)}>
+        <div className='success-display'>
           <h1>Meet & Greet Scheduled</h1>
-          <p>Visit your profile to view <br/> meet & greets</p>
+          <p onClick={()=>history.push(`/user/profile`)}>Visit your profile to view <br/> meet & greets</p>
         </div>
       )}
     </>
