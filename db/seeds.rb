@@ -11,6 +11,7 @@
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
   MeetAndGreet.destroy_all
+  Favorite.destroy_all
   Review.destroy_all
   Animal.destroy_all
   Organization.destroy_all
