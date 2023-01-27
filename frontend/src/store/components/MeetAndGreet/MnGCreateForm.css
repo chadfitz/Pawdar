@@ -117,4 +117,11 @@
 
 .success-display h1{
   margin-bottom: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+.success-display:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.3s;
 }

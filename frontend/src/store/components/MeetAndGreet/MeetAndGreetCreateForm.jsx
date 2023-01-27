@@ -1,21 +1,44 @@
-import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useCallback, useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createMeetAndGreet } from '../../meetAndGreets';
 import './MnGCreateForm.css';
+import { useEffect } from 'react';
 
 const MeetAndGreetCreateForm = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const {animalId} = useParams();
   const sessionUser = useSelector(state => state.session.user)
-
+  
   const tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
-
+  
   const [showForm, setShowForm] = useState(true);
   const [startTime, setStartTime] = useState("");
   const [date, setDate] = useState("");
   const [showLogin, setShowLogin] = useState(false);
+  
+  const findExistingMnG = useCallback(()=> {
+    let meetAndGreetId;
+    console.log(sessionUser.meetAndGreets);
+    sessionUser.meetAndGreets.map(meetAndGreet => {
+      console.log("meetAndGreet.animal_id: ", meetAndGreet.animal_id)
+      console.log("animalId", animalId)
+        console.log("meetAndGreet:", meetAndGreet)
+      if (animalId && meetAndGreet.animal_id == animalId) {
+        console.log(meetAndGreet)
+        meetAndGreetId = meetAndGreet.id;
+      }
+      return meetAndGreetId;
+    })
+    return meetAndGreetId;
+  }, [animalId, sessionUser])
+
+  useEffect(()=>{
+    const existingMnG = findExistingMnG();
+    if (sessionUser && existingMnG) setShowForm(false);
+  }, [sessionUser, findExistingMnG])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -64,9 +87,9 @@ const MeetAndGreetCreateForm = () => {
         </div>
       )}
       {!showForm && (
-        <div className='success-display'>
-          <h1>Success!</h1>
-          <p>Visit your profile to view meet & greets</p>
+        <div className='success-display' onClick={()=>history.push(`/user/profile`)}>
+          <h1>Meet & Greet Scheduled</h1>
+          <p>Visit your profile to view <br/> meet & greets</p>
         </div>
       )}
     </>
