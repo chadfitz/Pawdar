@@ -21,7 +21,7 @@ const MeetAndGreetCreateForm = () => {
   
   const findExistingMnG = useCallback(()=> {
     let meetAndGreetId;
-    sessionUser.meetAndGreets.map(meetAndGreet => {
+    sessionUser?.meetAndGreets.map(meetAndGreet => {
       if (animalId && meetAndGreet.animal_id === parseInt(animalId)) {
         meetAndGreetId = meetAndGreet.id;
       }
