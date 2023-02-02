@@ -8,7 +8,7 @@ const AnimalIndexItem = ({ animal }) => {
     <Link to={`/animals/${animal.id}`} className="animal-link">
       <div className='animal-container'>
         <li>
-          {/* <img src={animal.photoUrl} alt="" /> */}
+          <img src={animal.photoUrl} alt="" />
           <div className='animal-name'>{animal.name}</div>
         </li>
       </div>
