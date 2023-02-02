@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { NavLink, useParams } from 'react-router-dom';
 import { getAnimals, fetchSearchAnimals } from '../../animals';
 import AnimalIndexItem from '../Animal/AnimalIndexItem';
+import ProfilePage from '../ProfilePage/ProfilePageIndex';
 import './SearchIndex.css';
 
 const SearchIndex = () => {
@@ -26,7 +27,9 @@ const SearchIndex = () => {
   },[])
 
   return (
-    <ul className='search-index-list'>
+    // CSS for main is in ProfilePage.css
+    <div role='main' className='main'>
+      <ul className='search-index-list'>
         {searchSuccess && searchAnimals.map(animal => <AnimalIndexItem key={animal.id} animal={animal} />)}
         {!searchSuccess && (
           <div className='error-page'>
@@ -34,7 +37,8 @@ const SearchIndex = () => {
             <NavLink to="/" className='error-page-link'>Back to Home</NavLink>
           </div>
         )}
-    </ul>
+      </ul>
+    </div>
   )
 }
 

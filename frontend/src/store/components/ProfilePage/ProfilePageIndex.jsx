@@ -3,8 +3,6 @@ import { useSelector } from 'react-redux';
 import MeetAndGreetIndex from '../MeetAndGreet/MeetAndGreetIndex';
 import FavoriteIndex from '../Favorite/FavoriteIndex';
 import './AboutMe.css';
-import './Favorites.css';
-import './Recommended.css';
 import './ProfilePage.css';
 
 const ProfilePage = () => {
