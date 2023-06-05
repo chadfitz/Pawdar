@@ -30,3 +30,19 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+/* 
+@media(max-width: 1200px){
+  .compose-top{
+    display: flex;
+    flex-direction: column;
+  }
+  .compose-container{
+    height: 980px;
+  }
+  #choose-your-location{
+    padding-bottom: 35px;
+  }
+  .compose-map{
+    align-self: center;
+  }
+} */

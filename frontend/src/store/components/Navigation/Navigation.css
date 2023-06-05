@@ -195,3 +195,27 @@
   color: var(--primary-color);
   transition: 0.3s;
 }
+
+/* for mobile */
+
+@media(max-width: 400px){
+  .nav-left{
+    font-size: 11px;
+  }
+  .nav-left .home-logo{
+    margin-right: 10px;
+  }
+
+  .login-button button{
+    padding-left: 30px;
+    letter-spacing: 1.3px;
+    font-size: 13px;
+  }
+  
+  .signup-button button{
+    padding-left: 30px;
+    padding-right: 5px;
+    letter-spacing: 1.3px;
+    font-size: 13px;
+  }
+}
